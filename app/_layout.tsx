@@ -4,6 +4,7 @@ import { Stack ,Slot } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
+import {Text ,View } from 'react-native'
 import "../global.css";
 import 'react-native-reanimated';
 
@@ -29,12 +30,17 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    
+
+    <Stack screenOptions={{ headerShown: false }}>
+    {/* Stack for Authentication Pages */}
+    <Stack.Screen name="auth" options={{ headerShown: false }} />
+          <View>
+            <Text>Hello ALl</Text>
+          </View>
+    {/* Tab Layout for Main Pages */}
+    <Stack.Screen name="tabs" options={{ headerShown: false }} />
+  </Stack>
+    
   );
 }
