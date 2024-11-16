@@ -35,9 +35,7 @@ export default function RootLayout() {
     <Stack screenOptions={{ headerShown: false }}>
     {/* Stack for Authentication Pages */}
     <Stack.Screen name="auth" options={{ headerShown: false }} />
-          <View>
-            <Text>Hello ALl</Text>
-          </View>
+         
     {/* Tab Layout for Main Pages */}
     <Stack.Screen name="tabs" options={{ headerShown: false }} />
   </Stack>

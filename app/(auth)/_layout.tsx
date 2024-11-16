@@ -7,6 +7,8 @@ export default function AuthLayout() {
         headerStyle: { backgroundColor: "#f8f9fa" },
         headerTintColor: "#333",
         headerTitleAlign: "center",
+        headerShown:false
+        
       }}
     >
       <Stack.Screen name="login" options={{ title: "Login" }} />
