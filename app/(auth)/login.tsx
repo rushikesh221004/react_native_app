@@ -1,30 +1,40 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import {Text,TextInput,View,TouchableOpacity,} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Entypo from "react-native-vector-icons/Entypo";
+import Svg, { Path } from 'react-native-svg';
+import { useRouter } from 'expo-router';
 
 const Login = () => {
+  const router = useRouter();
+
   const [showIcon, setShowIcon] = useState(false);
 
   const handlePress = () => {
-    setShowIcon(true);
+    setShowIcon((prevState) => !prevState); 
   };
   return (
     <View className="">
-      <View>
-        <View className="h-[150px] w-full bg-[#800000] border-2 border-b-black rounded-bl-[80px] rounded-br-[75px]  ">
-          <Text className="text-white font-bold text-xl font-serif text-center mt-10">
-            Login
-          </Text>
+      <View className="relative w-[100%] h-[130px] top-0 flex flex-col  items-center justify-center  text-center">
+          <Svg
+            height="300" 
+            width="100%"
+            viewBox="0 0 1440 1100"  
+            style={{ position: 'absolute', top: 0 }}
+          >
+            <Path
+              fill="#800000"
+              d="M0,450C240,650,480,250,720,450C960,650,1200,250,1440,450L1440,300L1440,0L0,0Z"
+            />
+
+          </Svg>
+
+          <Text className='text-4xl font-semibold text-white absolute'>Login</Text>
+
         </View>
+      <View>
+        
 
         <Text className=" text-center font-semibold text-2xl mt-5">
           Welcome Back!
@@ -36,14 +46,14 @@ const Login = () => {
           <Text className="font-semibold ml-5 text-xl mt-5">Email</Text>
 
           <TextInput
-            className="ml-5 mt-2 border-2 border-[#800000] rounded-lg mx-auto w-[350px] h-10 focus:outline-none focus:border-[#800000] pl-3 text-[#827d7d]"
+            className="ml-5 mt-2 border-2 border-[#800000] rounded-lg mx-auto w-[350px] h-10 focus:outline-none focus:border-[#800000] pl-3 "
             placeholder="example@gmail.com"
           />
 
           <Text className=" font-semibold ml-5 text-xl mt-5">Password</Text>
 
           <TextInput
-            className="ml-5 mt-2 border-2 border-[#800000] rounded-lg mx-auto w-[350px] h-10 focus:outline-none focus:border-[#800000] pl-3 text-[#827d7d]"
+            className="ml-5 mt-2 border-2 border-[#800000] rounded-lg mx-auto w-[350px] h-10 focus:outline-none focus:border-[#800000] pl-3 "
             placeholder="**********"
             secureTextEntry={true}
           />
@@ -64,8 +74,9 @@ const Login = () => {
               )}
             </TouchableOpacity>
 
-            <Text className="ml-2 font-semibold">Remember me</Text>
-            <TouchableOpacity>
+            <Text className="ml-2 font-semibold" onPress={handlePress}
+               >Remember me</Text>
+            <TouchableOpacity onPress={() => router.push('/(auth)/forget-password')}>
               <Text className="underline ml-28 font-semibold">
                 Forget password?
               </Text>
@@ -85,7 +96,7 @@ const Login = () => {
           <AntDesign
             name="google"
             size={40}
-            color="#1c76d6"
+            color="#0284c7"
             className=" h-10 w-10 text-6x rounded-full flex justify-center items-center"
           />
           <FontAwesome
