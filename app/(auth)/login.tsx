@@ -1,120 +1,131 @@
 import React, { useState } from "react";
-import {Text,TextInput,View,TouchableOpacity,} from "react-native";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import Entypo from "react-native-vector-icons/Entypo";
+import { Text, TextInput, View, TouchableOpacity, } from "react-native";
+import { useFonts } from 'expo-font';
 import Svg, { Path } from 'react-native-svg';
 import { useRouter } from 'expo-router';
+import { AntDesign, FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 const Login = () => {
   const router = useRouter();
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [fontsLoaded] = useFonts({
+    SpecialElite: require('../../assets/fonts/SpecialElite-Regular.ttf'),
+
+  });
 
   const [showIcon, setShowIcon] = useState(false);
 
   const handlePress = () => {
-    setShowIcon((prevState) => !prevState); 
+    setShowIcon((prevState) => !prevState);
   };
   return (
     <View className="">
       <View className="relative w-[100%] h-[130px] top-0 flex flex-col  items-center justify-center  text-center">
-          <Svg
-            height="300" 
-            width="100%"
-            viewBox="0 0 1440 1100"  
-            style={{ position: 'absolute', top: 0 }}
-          >
-            <Path
-              fill="#800000"
-              d="M0,450C240,650,480,250,720,450C960,650,1200,250,1440,450L1440,300L1440,0L0,0Z"
-            />
+        <Svg
+          height="300"
+          width="100%"
+          viewBox="0 0 1440 1100"
+          style={{ position: 'absolute', top: 0 }}
+        >
+          <Path
+            fill="#800000"
+            d="M0,450C240,650,480,250,720,450C960,650,1200,250,1440,450L1440,300L1440,0L0,0Z"
+          />
 
-          </Svg>
+        </Svg>
+        <TouchableOpacity className=' absolute left-4 top-12'
+          onPress={() => router.replace('/(auth)/signup')}>
+          <FontAwesome6 name="less-than" size={18} color="white" />
+        </TouchableOpacity>
+        <Text className='text-5xl   text-white absolute'
+          style={{ fontFamily: 'SpecialElite' }}>Login</Text>
 
-          <Text className='text-4xl font-semibold text-white absolute'>Login</Text>
+      </View>
+      <View className="px-5">
 
-        </View>
-      <View>
-        
 
         <Text className=" text-center font-semibold text-2xl mt-5">
           Welcome Back!
         </Text>
-        <Text className="text-center  text-2xl mt-2">
+        <Text className="text-center text-[17px] font-medium mt-2 text-[#2f2e2e]">
           Let’s login to explore continuously
         </Text>
         <View>
-          <Text className="font-semibold ml-5 text-xl mt-5">Email</Text>
-
+          <Text className=" mt-6 font-semibold text-lg">Email</Text>
           <TextInput
-            className="ml-5 mt-2 border-2 border-[#800000] rounded-lg mx-auto w-[350px] h-10 focus:outline-none focus:border-[#800000] pl-3 "
-            placeholder="example@gmail.com"
-          />
+              placeholder="example@gmail.com"
+              keyboardType="email-address"
+              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+            />
 
-          <Text className=" font-semibold ml-5 text-xl mt-5">Password</Text>
+          <Text className=" mt-5 font-semibold text-lg">Password</Text>
 
-          <TextInput
-            className="ml-5 mt-2 border-2 border-[#800000] rounded-lg mx-auto w-[350px] h-10 focus:outline-none focus:border-[#800000] pl-3 "
-            placeholder="**********"
-            secureTextEntry={true}
-          />
+          <View className=' flex flex-row  justify-end items-center  relative'>
 
-          <View className="flex flex-row mt-3">
-            <TouchableOpacity
-              className="h-4 w-4 bg-[#800000] rounded-full ml-5"
-              onPress={handlePress}
-              activeOpacity={0.8}
-            >
-              {showIcon && (
-                <Entypo
-                  name="check"
-                  size={14}
-                  color="#fff"
-                  className=" flex justify-center items-center"
-                />
-              )}
+            <TextInput
+              placeholder="**************"
+
+              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              secureTextEntry={!passwordVisible}
+            />
+            <TouchableOpacity className=' absolute right-5'
+              onPress={() => setPasswordVisible(!passwordVisible)} >
+              <MaterialCommunityIcons name="eye" size={23} color='#4b5563' />
             </TouchableOpacity>
+          </View>
 
-            <Text className="ml-2 font-semibold" onPress={handlePress}
-               >Remember me</Text>
+          <View className="flex flex-row justify-end mt-2">
+          
             <TouchableOpacity onPress={() => router.push('/(auth)/forget-password')}>
-              <Text className="underline ml-28 font-semibold">
+              <Text className="underline  font-medium">
                 Forget password?
               </Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-12 mx-auto w-[350px]">
+          <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-12 mx-auto w-[350px]"
+          onPress={()=> router.push('/(tabs)')}>
             <Text className="text-white text-center text-[15px] ">Login</Text>
           </TouchableOpacity>
         </View>
-        <View className="flex flex-row items-center mt-5">
+        <View className="flex flex-row items-center justify-center mt-5">
           <View className="border-b border-[#800000] w-24 ml-5"></View>
-          <Text className="px-3 text-lg">or continue with</Text>
+          <Text className="px-3 text-lg font-medium">or continue with</Text>
           <View className="border-b w-24 mr-5 border-[#800000]"></View>
         </View>
 
         <View className="w-[200px] mx-auto mt-5  flex flex-row gap-10">
+          <View className="flex items-center justify-center">
           <AntDesign
             name="google"
-            size={40}
+            size={35}
             color="#0284c7"
-            className=" h-10 w-10 text-6x rounded-full flex justify-center items-center"
+            className="p-1 text-6x rounded-full flex justify-center items-center"
           />
-          <FontAwesome
+          </View>
+         <View className="flex items-center justify-center ">
+         <FontAwesome
             name="facebook-f"
             size={30}
             color="#fff"
-            className="bg-sky-600 h-10 w-10 text-6x rounded-full flex justify-center items-center  "
+            className=" bg-sky-600 w-[40px] h-[40px] p-[5px]  rounded-full"
           />
-          <AntDesign
+         </View>
+         <View className="flex items-center justify-center">
+         <AntDesign
             name="apple1"
-            size={40}
+            size={35}
             color="black"
-            className=" h-10 w-10 text-6x rounded-full flex justify-center items-center"
+            className=" rounded-full flex justify-center items-center"
           />
+         </View>
         </View>
-        <Text className="mt-5 font-semibold text-center text-[15px]">
-          Don’t have an account? <Text className="text-[#800000]">Sign up</Text>
-        </Text>
+        <View className="flex-row justify-center my-4  ">
+            <Text className="font-semibold text-[14px]">Don't have an account?</Text>
+            <TouchableOpacity onPress={() => router.push('/(auth)/signup')}>
+              <Text className="text-[#800000] font-semibold text-[14px]"> Sign up</Text>
+            </TouchableOpacity>
+          </View>
       </View>
     </View>
   );

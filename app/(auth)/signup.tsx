@@ -110,9 +110,9 @@ const SignUp = () => {
           </TouchableOpacity>
 
           <View className="flex-row justify-center my-4  ">
-            <Text className="font-medium text-[14px]">Already have an account?</Text>
+            <Text className="font-semibold text-[14px]">Already have an account?</Text>
             <TouchableOpacity onPress={() => router.push('/(auth)/login')}>
-              <Text className="text-[#800000] font-medium text-[14px]"> Login</Text>
+              <Text className="text-[#800000] font-semibold text-[14px]"> Login</Text>
             </TouchableOpacity>
           </View>
         </View>
