@@ -32,6 +32,15 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      "expo-font",
+      [
+        "expo-font",
+        {
+          "fonts": {
+            "SpecialElite": "./assets/fonts/SpecialElite-Regular.ttf"
+          }
+        }
       ]
     ],
     "experiments": {
