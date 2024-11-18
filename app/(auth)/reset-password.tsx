@@ -35,8 +35,8 @@ const ResetPassword = () => {
           onPress={() => router.replace('/(auth)/verification')}>
           <FontAwesome6 name="less-than" size={18} color="white" />
         </TouchableOpacity>
-        <Text className='text-5xl   text-white absolute text-center'
-          style={{ fontFamily: 'SpecialElite' }}>Reset<br></br> password</Text>
+        <Text className='text-[36px]   text-white absolute text-center'
+          style={{ fontFamily: 'SpecialElite' }}>Reset password</Text>
 
       </View>
       <View className='px-5'>
@@ -72,7 +72,7 @@ const ResetPassword = () => {
               
             </View>
             <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-12 mx-auto w-[350px]"
-      onPress={()=> router.push('/(auth)/verification')}>
+      onPress={()=> router.push('/(auth)/login')}>
         <Text className="text-white text-center text-[15px] ">Reset Password</Text>
       </TouchableOpacity>
           </View>
