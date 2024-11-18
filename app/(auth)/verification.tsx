@@ -47,7 +47,7 @@ const VerificationComponent = () => {
           {[...Array(4)].map((_, index) => (
             <TextInput
               key={index}
-              className="w-12 h-12 text-center border-2 border-[#800000] focus:outline-none rounded-[5px] text-xl font-semibold"
+              className="w-14 h-14 text-center border-2 border-[#800000] focus:outline-none rounded-[5px] text-xl font-semibold"
               maxLength={1}
               keyboardType="numeric"
             />
