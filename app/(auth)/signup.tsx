@@ -36,7 +36,7 @@ const SignUp = () => {
           onPress={()=> router.replace('/')}>
           <FontAwesome6 name="less-than" size={18} color="white"/>
           </TouchableOpacity>
-          <Text className='  text-white absolute text-5xl ' style={{ fontFamily: 'SpecialElite' }}>Sign Up </Text>
+          <Text className='  text-white absolute text-5xl ' style={{ fontFamily: 'SpecialElite' }}>Sign Up</Text>
 
         </View>
         {/* Main Form */}

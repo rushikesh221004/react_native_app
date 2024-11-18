@@ -1,67 +1,69 @@
-import { Image, StyleSheet, Platform, Text, View, TextInput, TouchableOpacity } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-
+import { Image, StyleSheet, Platform, Text, View, TextInput, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { router, useRouter } from 'expo-router';
+import { useExpoRouter } from 'expo-router/build/global-state/router-store';
+ 
+ 
+ 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <>
-      <View className="items-center justify-center flex-1 px-4 bg-gray-100">
-        <Text>Welcome to Blood Bank App</Text>
-        <Text className="mb-8 text-2xl font-bold text-gray-800">Login</Text>
+           <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
-        <View className="w-full">
+        <View className="relative w-[100%] h-[300px] top-0 flex flex-col  items-center justify-center  text-center bg-blue-100">
+          <Svg
+            height="300"
+            width="100%"
+            viewBox="0 0 1440 1100"
+            style={{ position: 'absolute', top: 0 }}
+          >
+            <Path
+              fill="#800000"
+              d="M0,450C240,650,480,250,720,450C960,650,1200,250,1440,450L1440,300L1440,0L0,0Z"
+            />
 
-          <TextInput
-            placeholder="Email"
+          </Svg>
+          <View className=' flex flex-col  px-5 gap-7 my-8'>
 
-            className="w-full h-12 px-4 mb-2 border border-gray-300 rounded-lg"
-            keyboardType="email-address"
-
-          />
-
-
-          <TextInput
-            placeholder="Password"
-
-            className="w-full h-12 px-4 mb-2 border border-gray-300 rounded-lg"
-
-            secureTextEntry
-          />
-
-
-          <TouchableOpacity
-            className="items-center justify-center w-full h-12 bg-blue-500 rounded-lg"
             
-          >
-            <Text className="text-lg font-semibold text-white">Login</Text>
-          </TouchableOpacity>
+          <View className='flex flex-row justify-between items-center   w-full    '>
+            <View className='flex flex-row items-center  justify-between'>
+                  <View className='h-14 w-14 bg-white rounded-full'></View>
+                  <View className='pl-2'>
+                    <Text className='text-white text-lg font-normal'>Hello Selena!</Text>
+                    <Text className='text-white text-[10px] mt-1'>User ID: 915770</Text>
+                  </View>
+            </View>
+            <View className='flex flex-row items-center gap-5'>
+                <TouchableOpacity onPress={()=> router.push('./chating')}>
+                <Ionicons name="chatbubble-ellipses-outline" size={24} color="white" />
+                </TouchableOpacity>
+              <TouchableOpacity onPress={()=> router.push('./notification')}>
+              <Ionicons name="notifications-outline" size={24} color="white" />
+              </TouchableOpacity>
+              </View>
+          </View>
+
+           <ScrollView  horizontal showsHorizontalScrollIndicator={false}>
+           <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px] mr-3'></View>
+           <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px]  mr-3'></View>
+           <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px]  mr-3'></View>
+           <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px]  mr-3'></View>
+           </ScrollView>
+          </View>
+          
+
         </View>
-
-        <TouchableOpacity className="mt-4">
-          <Text className="text-blue-500">Forgot Password?</Text>
-        </TouchableOpacity>
-
-        <View className="mt-6">
-          <Text className="text-gray-600">Don't have an account?</Text>
-
-
+        {/* Main Form */}
+        <View className='px-5  mt-5'>
+  
+            
         </View>
-        <View className='w-full mt-6 text-center border border-gray-300'>
-          <TouchableOpacity
-            className="items-center justify-center h-12 my-2 bg-pink-400 rounded-lg"
-
-          >
-             <Text className="text-lg font-semibold text-white">Register</Text> 
-
-          </TouchableOpacity></View>
-
-
-
-      </View>
+      </ScrollView>
+    </SafeAreaView>
     </>
 
   );
