@@ -35,7 +35,7 @@ const Login = () => {
 
         </Svg>
         <TouchableOpacity className=' absolute left-4 top-12'
-          onPress={() => router.replace('/(auth)/choose-prefrence')}>
+          onPress={() => router.replace('/(auth)/signup')}>
           <FontAwesome6 name="less-than" size={18} color="white" />
         </TouchableOpacity>
         <Text className='text-5xl   text-white absolute'

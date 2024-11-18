@@ -23,13 +23,16 @@ const ChoosePreference = () => {
             d="M0,450C240,650,480,250,720,450C960,650,1200,250,1440,450L1440,300L1440,0L0,0Z"
           />
         </Svg>
-        <TouchableOpacity
-          className=" absolute left-4 bottom-24"
-         
-        >
-          <FontAwesome6 name="less-than" size={18} color="white" />
+        <TouchableOpacity className=" absolute left-4 bottom-24">
+          <FontAwesome6 name="less-than" size={18} color="#fff" />
         </TouchableOpacity>
-        <Text className="  text-white ml-[310px] mb-20 text-xl"  onPress={() => router.push("/")}> skip</Text>
+        <Text
+          className="  text-white ml-[310px] mb-20 text-xl"
+          onPress={() => router.push("/")}
+        >
+          {" "}
+          skip
+        </Text>
       </View>
 
       <Text className="mt-32 font-medium text-[20px] mx-5 text-center">
@@ -43,7 +46,7 @@ const ChoosePreference = () => {
           </Text>
           <Text className="mt-2 text-lg font-medium">Need</Text>
         </TouchableOpacity>
-        <TouchableOpacity className="bg-white rounded-lg shadow-lg items-center justify-center w-36 h-36" >
+        <TouchableOpacity className="bg-white rounded-lg shadow-lg items-center justify-center w-36 h-36">
           <View className="relative w-10 h-10 justify-center items-center">
             <SimpleLineIcons name="drop" size={40} color="black" />
 
