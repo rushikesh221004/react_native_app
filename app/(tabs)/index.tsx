@@ -48,7 +48,9 @@ export default function HomeScreen() {
           </View>
 
            <ScrollView  horizontal showsHorizontalScrollIndicator={false}>
-           <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px] mr-3'></View>
+           <View className='bg-white rounded-2xl w-[200px] h-[100px] mr-3 border-2 border-gray-400 p-3'>
+            <Text  className='text-[10px]'>You can decome a blood donar in</Text>
+           </View>
            <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px]  mr-3'></View>
            <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px]  mr-3'></View>
            <View className='bg-yellow-400 rounded-xl w-[150px] h-[100px]  mr-3'></View>
