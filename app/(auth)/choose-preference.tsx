@@ -25,11 +25,12 @@ const ChoosePreference = () => {
         </Svg>
         <TouchableOpacity
           className=" absolute left-4 bottom-24"
+          onPress={() => router.replace('./login')}
         >
           <FontAwesome6 name="less-than" size={18} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity  onPress={() => router.push("/")}>
-        <Text className="  text-white ml-[310px] mb-20 text-xl"> skip</Text>
+        <TouchableOpacity onPress={() => router.push("/(tabs)")}>
+          <Text className="  text-white ml-[310px] mb-20 text-xl"> skip</Text>
         </TouchableOpacity>
       </View>
 
@@ -37,15 +38,15 @@ const ChoosePreference = () => {
         Choose one do you prefer?
       </Text>
 
-      <View className="flex-row space-x-8 mt-16 mx-9 ">
-        <TouchableOpacity className="bg-white rounded-lg shadow-lg items-center justify-center w-36 h-36">
-          <Text className="text-4xl">
+      <View className="flex-row flex   items-center justify-evenly   mt-14 mx-7 ">
+        <TouchableOpacity className="bg-white rounded-3xl shadow-xl shadow-gray-700 items-center justify-center w-36 h-36">
+        
             <FontAwesome5 name="hand-holding-water" size={40} color="black" />
-          </Text>
+          
           <Text className="mt-2 text-lg font-medium">Need</Text>
         </TouchableOpacity>
-        <TouchableOpacity className="bg-white rounded-lg shadow-lg items-center justify-center w-36 h-36">
-          <View className="relative w-10 h-10 justify-center items-center">
+        <TouchableOpacity className="bg-white rounded-3xl shadow-xl shadow-gray-700 items-center justify-center w-36 h-36">
+          <View className="relative   flex   justify-center items-center">
             <SimpleLineIcons name="drop" size={40} color="black" />
 
             <Ionicons
@@ -60,8 +61,8 @@ const ChoosePreference = () => {
       </View>
 
       <TouchableOpacity
-        className="bg-[#800000]  text-center py-3 rounded-lg mt-28 mx-auto w-[350px]"
-        onPress={() => router.push("/")}
+        className="bg-[#800000]  text-center py-3 rounded-lg mt-24 mx-auto w-[350px]"
+        onPress={() => router.push("/(tabs)")}
       >
         <Text className="text-white text-center text-[15px] ">Next</Text>
       </TouchableOpacity>
