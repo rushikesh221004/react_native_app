@@ -13,16 +13,16 @@ export default function HomeScreen() {
 
   const user = [
     {
-      name: "Vijay Hiwale", Location: "Mumbai", bloodType: "O"
+      name: "Vijay Hiwale", Location: "Mumbai", bloodType: "O+"
     },
     {
-      name: "Rushikesh Manjre", Location: "Surat", bloodType: "O"
+      name: "Rushikesh Manjre", Location: "Surat", bloodType: "A"
     },
     {
-      name: "Om Murhe", Location: "Nagpur", bloodType: "O"
+      name: "Om Murhe", Location: "Nagpur", bloodType: "B+"
     },
     {
-      name: "Vaibhav Nimkarde", Location: "Pune", bloodType: "O"
+      name: "Vaibhav Nimkarde", Location: "Pune", bloodType: "AB"
     },
 
   ]
@@ -32,7 +32,7 @@ export default function HomeScreen() {
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
-          <View className="relative w-[100%] h-[200px] top-0 flex flex-col  items-center justify-center  text-center  ">
+          <View className="relative w-[100%] h-[210px] top-0 flex flex-col  items-center justify-center  text-center  ">
             <Svg
               height="300"
               width="100%"
@@ -57,17 +57,17 @@ export default function HomeScreen() {
                   </View>
                 </View>
                 <View className='flex flex-row items-center gap-5'>
-                  <TouchableOpacity onPress={() => router.push('./chating')}>
+                  <TouchableOpacity onPress={() => router.push('../(nonTabs)/chating')}>
                     <Ionicons name="chatbubble-ellipses-outline" size={24} color="white" />
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={() => router.push('./notification')}>
+                  <TouchableOpacity onPress={() => router.push('../(nonTabs)/notification')}>
                     <Ionicons name="notifications-outline" size={24} color="white" />
                   </TouchableOpacity>
                 </View>
               </View>
 
               <ScrollView horizontal showsHorizontalScrollIndicator={false} className='pl-1'>
-                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3  flex items-center justify-center  '>
+                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3 px-4  flex  items-start justify-center   '>
                   <View className='flex flex-col justify-start items-start gap-1'>
 
                     <Text className='text-[11px] font-medium'>You can decome a blood donar in</Text>
@@ -83,7 +83,7 @@ export default function HomeScreen() {
                   </View>
 
                 </View>
-                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3  flex items-center justify-center  '>
+                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3 px-4  flex  items-start justify-center  '>
                   <View className='flex flex-col justify-start items-start gap-1'>
 
                     <Text className='text-[11px] font-medium'>You can decome a blood donar in</Text>
@@ -99,7 +99,7 @@ export default function HomeScreen() {
                   </View>
 
                 </View>
-                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3  flex items-center justify-center  '>
+                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3 px-4 flex  items-start justify-center '>
                   <View className='flex flex-col justify-start items-start gap-1'>
 
                     <Text className='text-[11px] font-medium'>You can decome a blood donar in</Text>
@@ -122,7 +122,7 @@ export default function HomeScreen() {
 
           </View>
           {/* Main Form */}
-          <View className='px-5  mt-5   '>
+          <View className='px-5  mt-3   '>
 
             {/* find donor blood instru and req for blood section */}
             <View className=' px-1 flex flex-row  items-center justify-between  '>
@@ -165,8 +165,9 @@ export default function HomeScreen() {
 
             <View className=''>
               <Text className='text-[16px] font-medium px-1 mb-2'>Donation Request</Text>
-              <FlatList
+              {/* <FlatList
                 data={user}
+                 
                 renderItem={({ item }) =>
                   <View className='flex flex-row px-1 items-center justify-between   py-2   mb-1    '  >
                     <View className='flex  flex-row  gap-2'>
@@ -179,9 +180,35 @@ export default function HomeScreen() {
                         </View>
                       </View>
                     </View>
-                    <View><MaterialCommunityIcons name="water" size={35} color="#800000" /></View>
+                    <View className='relative   flex items-center justify-center'>
+                      <MaterialCommunityIcons name="water" size={40} color="#800000" />
+                      <Text className=' absolute text-center  text-white text-[11px] font-medium'>{item.bloodType}</Text>
+                    </View>
                   </View>}
-              />
+              /> */}
+
+              <ScrollView className=' '>
+                {
+                   user.map((data,items)=>(
+                    <View key={items} className='flex flex-row px-1 items-center justify-between   py-2  border-b-2 border-gray-200 '  >
+                    <View className='flex  flex-row  gap-2'>
+                      <View className='h-[45px] w-[45px] rounded-full bg-red-600'></View>
+                      <View className='   justify-center '>
+                        <Text className='font-semibold'>{data.name}</Text>
+                        <View className='flex flex-row'>
+                          <Ionicons name="location-outline" size={15} color="black" />
+                          <Text className='text-[12px]'>{data.Location}</Text>
+                        </View>
+                      </View>
+                    </View>
+                    <View className='relative   flex items-center justify-center'>
+                      <MaterialCommunityIcons name="water" size={40} color="#800000" />
+                      <Text className=' absolute text-center  text-white text-[11px] font-medium'>{data.bloodType}</Text>
+                    </View>
+                  </View>
+                   ))
+                }
+              </ScrollView>
             </View>
           </View>
         </ScrollView>

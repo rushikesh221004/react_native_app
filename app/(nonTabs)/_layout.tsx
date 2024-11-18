@@ -1,0 +1,21 @@
+import { View, Text } from 'react-native'
+import React from 'react'
+import { Stack } from 'expo-router'
+
+const Layout = () => {
+  return (
+   <Stack 
+   screenOptions={{
+    headerStyle: { backgroundColor: "#f8f9fa" },
+    headerTintColor: "#333",
+    headerTitleAlign: "center",
+    headerShown:false
+    
+  }}>
+      <Stack.Screen name="chating" options={{title:"Chating"}}></Stack.Screen>
+      <Stack.Screen name="notification" options={{title:"Notification"}}></Stack.Screen>
+   </Stack>
+  )
+}
+
+export default Layout

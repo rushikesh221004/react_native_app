@@ -51,6 +51,7 @@ export default function TabLayout() {
       <Tabs.Screen name="donor" options={{ title: "Donors" }} />
       <Tabs.Screen name="need" options={{ title: "Need" }} />
       <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+        
     </Tabs>
   );
 }
