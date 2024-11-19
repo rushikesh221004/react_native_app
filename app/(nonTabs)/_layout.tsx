@@ -14,6 +14,7 @@ const Layout = () => {
   }}>
       <Stack.Screen name="chating" options={{title:"Chating"}}></Stack.Screen>
       <Stack.Screen name="notification" options={{title:"Notification"}}></Stack.Screen>
+      <Stack.Screen name="blood-instruction" options={{title:"bloodInstruction"}}></Stack.Screen>
    </Stack>
   )
 }
