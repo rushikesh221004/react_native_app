@@ -25,7 +25,7 @@ const ChoosePreference = () => {
         </Svg>
         <TouchableOpacity
           className=" absolute left-4 bottom-24"
-          onPress={() => router.replace('./login')}
+          onPress={() => router.replace('./')}
         >
           <FontAwesome6 name="less-than" size={18} color="white" />
         </TouchableOpacity>

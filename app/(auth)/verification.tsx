@@ -57,6 +57,9 @@ const VerificationComponent = () => {
         <Text className="mt-4  text-center font-medium ">
           Resend Code in <Text className="font-bold text-[#800000]">{countdown }</Text> sec
         </Text>
+        <TouchableOpacity>
+          <Text className='text-center font-medium text-[#800000] underline text-sm'>Reset Code</Text>
+        </TouchableOpacity>
 
         <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-5 mx-auto w-[350px]"
          onPress={() => router.push('/(auth)/reset-password')}>

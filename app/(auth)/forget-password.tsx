@@ -29,7 +29,7 @@ const ForgetPassword = () => {
 
         <TouchableOpacity
           className=" absolute left-4 top-14"
-          onPress={() => router.replace("/(auth)/login")}
+          onPress={() => router.replace("/(auth)")}
         >
           <FontAwesome6 name="less-than" size={18} color="white" />
         </TouchableOpacity>
@@ -57,7 +57,7 @@ const ForgetPassword = () => {
 
       <View className=" flex flex-row justify-center my-6 absolute bottom-0   w-full  items-center  ">
             <Text className="font-semibold text-[14px]">Go Back To?</Text>
-            <TouchableOpacity onPress={() => router.push('/(auth)/login')}>
+            <TouchableOpacity onPress={() => router.push('/(auth)')}>
               <Text className="text-[#800000] font-semibold text-[14px]"> Login</Text>
             </TouchableOpacity>
           </View>
