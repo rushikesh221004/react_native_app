@@ -141,7 +141,7 @@ export default function HomeScreen() {
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => router.push('')}>
+              <TouchableOpacity onPress={() => router.push('../(nonTabs)/blood-instruction')}>
                 <View className='h-[100px] w-[100px] bg-white  flex items-center flex-col justify-center rounded-3xl  gap-2 p-2    shadow-gray-900 shadow-md border-2 border-gray-200'>
                   <Fontisto name="blood-drop" size={24} color="black" className='text-center' />
                   <Text className='text-[11px] font-semibold text-center'>Blood Instruction</Text>
