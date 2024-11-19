@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, Text, View, TextInput, TouchableOpacity, SafeAreaView, ScrollView, FlatList, FlatListComponent } from 'react-native';
+import { Image, StyleSheet, Platform, Text, View, TextInput, TouchableOpacity, SafeAreaView, ScrollView, FlatList, FlatListComponent, TextComponent } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router, useRouter } from 'expo-router';
@@ -78,7 +78,10 @@ export default function HomeScreen() {
 
                     </View>
 
+                    <TouchableOpacity
+                    onPress={()=> router.push('../(nonTabs)/donor-details')}>
                     <Text className='text-[#800000] text-[12px] underline font-medium'>Become a Donar Now</Text>
+                    </TouchableOpacity>
 
                   </View>
 
