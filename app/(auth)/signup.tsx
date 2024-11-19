@@ -95,7 +95,7 @@ const SignUp = () => {
 
           <TouchableOpacity
             className="bg-[#800000] w-full text-center py-3 rounded-lg mt-10"
-            onPress={() => router.push('/(auth)/login')}
+            onPress={() => router.push('/(auth)')}
           >
             <Text className="text-white text-center font-medium text-[15px]">Sign Up</Text>
           </TouchableOpacity>
@@ -111,7 +111,7 @@ const SignUp = () => {
 
           <View className="flex-row justify-center my-4  ">
             <Text className="font-semibold text-[14px]">Already have an account?</Text>
-            <TouchableOpacity onPress={() => router.push('/(auth)/login')}>
+            <TouchableOpacity onPress={() => router.push('/(auth)')}>
               <Text className="text-[#800000] font-semibold text-[14px]"> Login</Text>
             </TouchableOpacity>
           </View>
