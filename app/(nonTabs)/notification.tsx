@@ -37,7 +37,7 @@ const Notification = () => {
             subtitle="Left a 5 review"
           />
           <NotificationItem
-            name="Vijay Hiwalw"
+            name="Vijay Hiwale"
             time="9:22 AM"
             subtitle="Tracked a journey map"
           />
@@ -54,7 +54,7 @@ const Notification = () => {
           </Text>
           <View className="border-b mb-4" />
           <NotificationItem
-            name="VAibhav Nimkarde "
+            name="Vaibhav Nimkarde "
             time="9:00 PM"
             subtitle="Left a 5 review"
           />
@@ -77,7 +77,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
 }) => {
   return (
     <View className="mb-2">
-      {/* Notification Content */}
+      
       <View className="flex-row items-center justify-between p-2 rounded">
         <View className="flex-row items-center">
           <Image
@@ -85,7 +85,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
             className="w-10 h-10 rounded-full mr-2"
           />
           <View className="flex-col">
-            <Text className="font-medium">{name}</Text>
+            <Text className="font-medium text-lg">{name}</Text>
             <Text className="text-xs text-gray-500">{subtitle}</Text>
           </View>
         </View>
