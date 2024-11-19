@@ -127,23 +127,23 @@ export default function HomeScreen() {
             {/* find donor blood instru and req for blood section */}
             <View className=' px-1 flex flex-row  items-center justify-between  '>
 
-              <TouchableOpacity onPress={() => router.push('')}>
+              <TouchableOpacity onPress={() => router.push('../(nonTabs)/blood-requestAvailable')}>
                 <View className='h-[100px] w-[100px] bg-white  flex items-center flex-col justify-center rounded-3xl gap-2 p-2 shadow-gray-900 shadow-md border-2 border-gray-200' >
-                  <Feather name="search" size={24} color="black" className='  text-center' />
-                  <Text className='text-[11px] font-semibold text-cen'>Find Donors</Text>
+                  <MaterialCommunityIcons name="blood-bag" size={24} color="#800000" className='  text-center' />
+                  <Text className='text-[11px] font-semibold text-center'>Available Blood Request</Text>
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => router.push('')}>
+              <TouchableOpacity onPress={() => router.push('./need')}>
                 <View className='h-[100px] w-[100px] bg-white  flex items-center flex-col justify-center rounded-3xl gap-2 p-2  shadow-gray-900 shadow-md border-2 border-gray-200'>
-                  <FontAwesome6 name="hand-holding-medical" size={24} color="black" className='  text-center' />
+                  <FontAwesome6 name="hand-holding-medical" size={24} color="#800000" className='  text-center' />
                   <Text className='text-[11px] font-semibold text-center'>Request For Blood</Text>
                 </View>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={() => router.push('../(nonTabs)/blood-instruction')}>
                 <View className='h-[100px] w-[100px] bg-white  flex items-center flex-col justify-center rounded-3xl  gap-2 p-2    shadow-gray-900 shadow-md border-2 border-gray-200'>
-                  <Fontisto name="blood-drop" size={24} color="black" className='text-center' />
+                  <Fontisto name="blood-drop" size={24} color="#800000" className='text-center' />
                   <Text className='text-[11px] font-semibold text-center'>Blood Instruction</Text>
                 </View>
               </TouchableOpacity>
@@ -153,12 +153,12 @@ export default function HomeScreen() {
             <View className='border-2 border-gray-400 rounded-xl mx-1 my-6 px-3 py-3' >
               <Text className='font-medium'>Blood Needed</Text>
               <View className='flex flex-row justify-between items-center mt-2 '>
-                <Ionicons name="water-outline" size={27} color="black" />
-                <Ionicons name="water-outline" size={27} color="black" />
-                <Ionicons name="water-outline" size={27} color="black" />
-                <Ionicons name="water-outline" size={27} color="black" />
-                <Ionicons name="water-outline" size={27} color="black" />
-                <Ionicons name="water-outline" size={27} color="black" />
+                <Ionicons name="water-outline" size={27} color="#800000"/>
+                <Ionicons name="water-outline" size={27} color="#800000" />
+                <Ionicons name="water-outline" size={27} color="#800000" />
+                <Ionicons name="water-outline" size={27} color="#800000" />
+                <Ionicons name="water-outline" size={27} color="#800000" />
+                <Ionicons name="water-outline" size={27} color="#800000" />
 
               </View>
             </View>
