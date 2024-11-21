@@ -12,7 +12,7 @@ const Need = () => {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
         <View className='fixed top-5 flex flex-row items-center justify-between px-5'>
-          <TouchableOpacity
+          <TouchableOpacity className='w-[30px] h-[30px]   flex justify-center'
             onPress={() => router.push('/')}>
             <FontAwesome6 name="less-than" size={18} color="black" />
           </TouchableOpacity>
@@ -30,39 +30,39 @@ const Need = () => {
             <Text className="font-semibold text-lg mt-4">Patient name</Text>
             <TextInput
               placeholder="Enter patient name"
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
             <Text className="font-semibold text-lg mt-4">Blood Type</Text>
             <TextInput
               placeholder="Select blood Type"
 
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
             <Text className="font-semibold text-lg mt-4">Age</Text>
             <TextInput
               keyboardType='numeric'
               placeholder="Enter patient age"
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
             <Text className="font-semibold text-lg mt-4">Disease Name</Text>
             <TextInput
               placeholder="Enter disease name"
 
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
             <Text className="font-semibold text-lg mt-4">Location</Text>
             <TextInput
               placeholder="Select location"
 
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
             <Text className="font-semibold text-lg mt-4">Contact Number</Text>
             <TextInput
               placeholder="Enter contact number"
               keyboardType='numeric'
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
           </View>
 

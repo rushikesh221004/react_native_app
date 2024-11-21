@@ -32,7 +32,7 @@ const SignUp = () => {
             />
 
           </Svg>
-          <TouchableOpacity className=' absolute left-4 top-12'
+          <TouchableOpacity className=' absolute left-4 top-12   w-[30px] h-[30px]'
           onPress={()=> router.replace('/')}>
           <FontAwesome6 name="less-than" size={18} color="white"/>
           </TouchableOpacity>
@@ -43,7 +43,7 @@ const SignUp = () => {
         <View className='px-5  mt-5'>
           <Text className="text-center text-[22px] font-bold">Create your account</Text>
 
-          <Text className="text-center text-[17px] font-medium mt-2 text-[#2f2e2e] "
+          <Text className="text-center text-[16px] font-medium mt-2 text-[#2f2e2e] "
           >
             Register now to create a new account
           </Text>
@@ -52,14 +52,14 @@ const SignUp = () => {
             <Text className="font-semibold text-lg mt-5">Name</Text>
             <TextInput
               placeholder="ex: Vijay Hiwale"
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
             <Text className="font-semibold text-lg mt-5">Email</Text>
             <TextInput
               placeholder="example@gmail.com"
               keyboardType="email-address"
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
             <Text className="font-semibold text-lg mt-5">Password</Text>
             <View className=' flex flex-row  justify-end items-center  relative'>
@@ -67,7 +67,7 @@ const SignUp = () => {
               <TextInput
                 placeholder="**************"
                
-                className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+                className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
                 secureTextEntry={!passwordVisible}
               />
               <TouchableOpacity className=' absolute right-5'
@@ -84,7 +84,7 @@ const SignUp = () => {
               <TextInput
                 placeholder="**************"
                 secureTextEntry={!confirmPasswordVisible}
-                className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+                className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
               />
               <TouchableOpacity className=' absolute right-5'
               onPress={() => setConfirmPasswordVisible(!confirmPasswordVisible)} >
@@ -102,7 +102,7 @@ const SignUp = () => {
 
           <TouchableOpacity
             className="border-2 border-[#800000] w-full text-center py-3 rounded-lg mt-4"
-            onPress={() => router.push('/(auth)/forget-password')}
+            
           >
             <Text className="text-[#800000] text-center font-medium text-[15px]">
               Sign in with Google

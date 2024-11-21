@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react_native_app",
+    "name": "Blood Bank",
     "slug": "react_native_app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vijayhiwale.react_native_app"
     },
     "web": {
       "bundler": "metro",
@@ -45,6 +46,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "cf84df0a-4070-4041-8121-424177fdd6c6"
+      }
     }
   }
 }

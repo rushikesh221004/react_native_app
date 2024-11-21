@@ -33,11 +33,11 @@ const VerificationComponent = () => {
             />
 
           </Svg>
-          <TouchableOpacity className=' absolute left-4 top-12'
+          <TouchableOpacity className='absolute left-4 top-12 w-[30px] h-[30px]'
           onPress={() => router.replace('/(auth)/forget-password')}>
           <FontAwesome6 name="less-than" size={18} color="white"/>
           </TouchableOpacity>
-          <Text className='  text-white absolute text-5xl ' style={{ fontFamily: 'SpecialElite' }}> Verification</Text>
+          <Text className='  text-white absolute text-4xl ' style={{ fontFamily: 'SpecialElite' }}> Verification</Text>
 
         </View>
        

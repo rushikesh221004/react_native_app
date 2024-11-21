@@ -34,7 +34,7 @@ const Login = () => {
           />
 
         </Svg>
-        <TouchableOpacity className=' absolute left-4 top-12'
+        <TouchableOpacity className=' absolute left-4 top-12 w-[30px] h-[30px]'
           onPress={() => router.replace('/(auth)/signup')}>
           <FontAwesome6 name="less-than" size={18} color="white" />
         </TouchableOpacity>
@@ -56,7 +56,7 @@ const Login = () => {
           <TextInput
               placeholder="example@gmail.com"
               keyboardType="email-address"
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
           <Text className=" mt-5 font-semibold text-lg">Password</Text>
@@ -66,10 +66,10 @@ const Login = () => {
             <TextInput
               placeholder="**************"
 
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full px-2   h-[40px] mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
               secureTextEntry={!passwordVisible}
             />
-            <TouchableOpacity className=' absolute right-5'
+            <TouchableOpacity className=' absolute right-5 '
               onPress={() => setPasswordVisible(!passwordVisible)} >
               <MaterialCommunityIcons name="eye" size={23} color='#4b5563' />
             </TouchableOpacity>

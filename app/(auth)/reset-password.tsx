@@ -31,7 +31,7 @@ const ResetPassword = () => {
           />
 
         </Svg>
-        <TouchableOpacity className=' absolute left-4 top-12'
+        <TouchableOpacity className='absolute left-4 top-12 w-[30px] h-[30px]'
           onPress={() => router.replace('/(auth)/verification')}>
           <FontAwesome6 name="less-than" size={18} color="white" />
         </TouchableOpacity>
@@ -46,7 +46,7 @@ const ResetPassword = () => {
               <TextInput
                 placeholder="New passsword"
                
-                className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+                className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
                 secureTextEntry={!passwordVisible}
               />
               <TouchableOpacity className=' absolute right-5 mt-2'
@@ -63,7 +63,7 @@ const ResetPassword = () => {
               <TextInput
                 placeholder="Confirm password"
                 secureTextEntry={!confirmPasswordVisible}
-                className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+                className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
               />
               <TouchableOpacity className=' absolute right-5 mt-2'
               onPress={() => setConfirmPasswordVisible(!confirmPasswordVisible)} >

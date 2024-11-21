@@ -33,7 +33,7 @@ const Profile = () => {
 
 
         <View className='fixed top-8 flex flex-row items-center justify-between px-5'>
-          <TouchableOpacity
+          <TouchableOpacity className='w-[30px] h-[30px] flex justify-center'
             onPress={() => router.push('../(tabs)/')}>
             <FontAwesome6 name="less-than" size={18} color="white" />
           </TouchableOpacity>
@@ -69,7 +69,7 @@ const Profile = () => {
         </View>
 
         <View>
-          <View className='flex flex-row items-center justify-between mt-10 '>
+          <View className='flex flex-row items-center justify-between mt-10 mb-2'>
             <Text className='text-[14px] font-medium'>Available To Donate</Text>
             <View>
               <Switch style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.2 }] }}
@@ -82,7 +82,7 @@ const Profile = () => {
             </View>
           </View>
 
-          <View className='flex flex-row items-center justify-between  '>
+          <View className='flex flex-row items-center justify-between mb-2 '>
             <Text className='text-[14px] font-medium'>Notification</Text>
             <View>
               <Switch style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.2 }] }}
@@ -95,7 +95,7 @@ const Profile = () => {
             </View>
           </View>
 
-          <View className='flex flex-row items-center justify-between  mb-1 '>
+          <View className='flex flex-row items-center justify-between  mb-3 '>
             <Text className='text-[14px] font-medium'>Allow Traking</Text>
             <View>
               <Switch style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.2 }] }}

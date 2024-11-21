@@ -15,11 +15,13 @@ const Notification = () => {
   return (
     <View className="flex-1">
         <View className='relative top-5 flex flex-row items-center justify-center px-5 '>
-            <TouchableOpacity className=' absolute left-6'
+        <View className=' absolute left-6 w-[30px] h-[30px] flex justify-center'>
+              <TouchableOpacity 
                 onPress={() => router.push('../(tabs)')}>
                 <FontAwesome6 name="less-than" size={18} color="black"
                  />
             </TouchableOpacity>
+              </View>
             <View><Text className='font-bold text-2xl text-center'>Notification</Text></View>
              
   
