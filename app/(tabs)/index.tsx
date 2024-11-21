@@ -169,34 +169,39 @@ export default function HomeScreen() {
             <View>
               <Text className='text-[16px] font-medium px-1 mb-2'>Blood Bank</Text>
               <View className="flex flex-wrap flex-row justify-between py-2">
-              <TouchableOpacity
-              className='w-[48%]'
-              onPress={()=> router.push('../(nonTabs)/blood-bankDetails')}>
-              <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1  ">
-                  <View className='  p-1   rounded-full'>
-                    <Image
-                      className='h-[40px] w-[40px] '
-                      source={require('../../assets/images/blood-bank.png')}
-                      resizeMode="contain"
-                    />
+                <TouchableOpacity
+                  className='w-[48%]'
+                  onPress={() => router.push('../(nonTabs)/blood-bankDetails')}>
+                  <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1  ">
+                    <View className='  p-1   rounded-full'>
+                      <Image
+                        className='h-[40px] w-[40px] '
+                        source={require('../../assets/images/blood-bank.png')}
+                        resizeMode="contain"
+                      />
+                    </View>
+                    <Text className="font-semibold text-[14px] text-center">Dr. Sony Blood Bank</Text>
+                    <Text className='text-[10px] font-medium text-center'>Location : Shivalay Vihar Khamagon</Text>
                   </View>
-                  <Text className="font-semibold text-[14px] text-center">Dr. Sony Blood Bank</Text>
-                  <Text className='text-[10px] font-medium text-center'>Location : Shivalay Vihar Khamagon</Text>
-                </View>
-              </TouchableOpacity>
+                </TouchableOpacity>
 
-                <View className="w-[48%] bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1">
-                  <View className=' '>
-                    <Image
-                      className='h-[40px] w-[40px]   '
-                      source={require('../../assets/images/blood-bank.png')}
-                      resizeMode="contain"
-                    />
+                <TouchableOpacity className="w-[48%]"
+                  onPress={() => router.push('../(nonTabs)/blood-bankDetails')}>
+                  <View className="  bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                    <View className=' '>
+                      <Image
+                        className='h-[40px] w-[40px]   '
+                        source={require('../../assets/images/blood-bank.png')}
+                        resizeMode="contain"
+                      />
+                    </View>
+                    <Text className="font-semibold text-[14px] text-center">Bss Trust Blood Bank</Text>
+                    <Text className='text-[10px] font-medium text-center'>Location : Farshi Road, Khamagon</Text>
                   </View>
-                  <Text className="font-semibold text-[14px] text-center">Bss Trust Blood Bank</Text>
-                  <Text className='text-[10px] font-medium text-center'>Location : Farshi Road, Khamagon</Text>
-                </View>
-                <View className="w-[48%] bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                </TouchableOpacity>
+               
+               <TouchableOpacity className='w-[48%]'>
+               <View className="  bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
                   <View className=' '>
                     <Image
                       className='h-[40px] w-[40px] '
@@ -207,7 +212,10 @@ export default function HomeScreen() {
                   <Text className="font-semibold text-[14px] text-center">Jeevan Jyoti Blood Bank</Text>
                   <Text className='text-[10px] font-medium text-center'>Location : Malkapur</Text>
                 </View>
-                <View className="w-[48%] bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+               </TouchableOpacity>
+                
+                <TouchableOpacity className='w-[48%]'>
+                <View className=" bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
                   <View className=' '>
                     <Image
                       className='h-[40px] w-[40px]  '
@@ -216,8 +224,9 @@ export default function HomeScreen() {
                     />
                   </View>
                   <Text className="font-semibold text-[14px] text-center">Lilavati Blood Bank </Text>
-                  <Text className='text-[10px] font-medium text-center'>Location : Buldhana</Text>
+                  <Text className='text-[10px] font-medium text-center'>Location : Malkapur road, Buldhana</Text>
                 </View>
+                </TouchableOpacity>
               </View>
             </View>
 
