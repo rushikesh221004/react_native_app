@@ -79,8 +79,8 @@ export default function HomeScreen() {
                     </View>
 
                     <TouchableOpacity
-                    onPress={()=> router.push('../(nonTabs)/donor-details')}>
-                    <Text className='text-[#800000] text-[12px] underline font-medium'>Become a Donar Now</Text>
+                      onPress={() => router.push('../(nonTabs)/donor-details')}>
+                      <Text className='text-[#800000] text-[12px] underline font-medium'>Become a Donar Now</Text>
                     </TouchableOpacity>
 
                   </View>
@@ -156,7 +156,7 @@ export default function HomeScreen() {
             <View className='border-2 border-gray-400 rounded-xl mx-1 my-6 px-3 py-3' >
               <Text className='font-medium'>Blood Needed</Text>
               <View className='flex flex-row justify-between items-center mt-2 '>
-                <Ionicons name="water-outline" size={27} color="#800000"/>
+                <Ionicons name="water-outline" size={27} color="#800000" />
                 <Ionicons name="water-outline" size={27} color="#800000" />
                 <Ionicons name="water-outline" size={27} color="#800000" />
                 <Ionicons name="water-outline" size={27} color="#800000" />
@@ -166,8 +166,63 @@ export default function HomeScreen() {
               </View>
             </View>
 
+            <View>
+              <Text className='text-[16px] font-medium px-1 mb-2'>Blood Bank</Text>
+              <View className="flex flex-wrap flex-row justify-between py-2">
+              <TouchableOpacity
+              className='w-[48%]'
+              onPress={()=> router.push('../(nonTabs)/blood-bankDetails')}>
+              <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1  ">
+                  <View className='  p-1   rounded-full'>
+                    <Image
+                      className='h-[40px] w-[40px] '
+                      source={require('../../assets/images/blood-bank.png')}
+                      resizeMode="contain"
+                    />
+                  </View>
+                  <Text className="font-semibold text-[14px] text-center">Dr. Sony Blood Bank</Text>
+                  <Text className='text-[10px] font-medium text-center'>Location : Shivalay Vihar Khamagon</Text>
+                </View>
+              </TouchableOpacity>
+
+                <View className="w-[48%] bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                  <View className=' '>
+                    <Image
+                      className='h-[40px] w-[40px]   '
+                      source={require('../../assets/images/blood-bank.png')}
+                      resizeMode="contain"
+                    />
+                  </View>
+                  <Text className="font-semibold text-[14px] text-center">Bss Trust Blood Bank</Text>
+                  <Text className='text-[10px] font-medium text-center'>Location : Farshi Road, Khamagon</Text>
+                </View>
+                <View className="w-[48%] bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                  <View className=' '>
+                    <Image
+                      className='h-[40px] w-[40px] '
+                      source={require('../../assets/images/blood-bank.png')}
+                      resizeMode="contain"
+                    />
+                  </View>
+                  <Text className="font-semibold text-[14px] text-center">Jeevan Jyoti Blood Bank</Text>
+                  <Text className='text-[10px] font-medium text-center'>Location : Malkapur</Text>
+                </View>
+                <View className="w-[48%] bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                  <View className=' '>
+                    <Image
+                      className='h-[40px] w-[40px]  '
+                      source={require('../../assets/images/blood-bank.png')}
+                      resizeMode="contain"
+                    />
+                  </View>
+                  <Text className="font-semibold text-[14px] text-center">Lilavati Blood Bank </Text>
+                  <Text className='text-[10px] font-medium text-center'>Location : Buldhana</Text>
+                </View>
+              </View>
+            </View>
+
             <View className=''>
-              <Text className='text-[16px] font-medium px-1 mb-2'>Donation Request</Text>
+              <Text className='text-[16px] font-medium px-1 mb-1 mt-1'>Donation Request</Text>
               {/* <FlatList
                 data={user}
                  
@@ -192,24 +247,24 @@ export default function HomeScreen() {
 
               <ScrollView className=' '>
                 {
-                   user.map((data,items)=>(
+                  user.map((data, items) => (
                     <View key={items} className='flex flex-row px-1 items-center justify-between   py-2  border-b-2 border-gray-200 '  >
-                    <View className='flex  flex-row  gap-2'>
-                      <View className='h-[45px] w-[45px] rounded-full bg-red-600'></View>
-                      <View className='   justify-center '>
-                        <Text className='font-semibold'>{data.name}</Text>
-                        <View className='flex flex-row'>
-                          <Ionicons name="location-outline" size={15} color="black" />
-                          <Text className='text-[12px]'>{data.Location}</Text>
+                      <View className='flex  flex-row  gap-2'>
+                        <View className='h-[45px] w-[45px] rounded-full bg-red-600'></View>
+                        <View className='   justify-center '>
+                          <Text className='font-semibold'>{data.name}</Text>
+                          <View className='flex flex-row'>
+                            <Ionicons name="location-outline" size={15} color="black" />
+                            <Text className='text-[12px]'>{data.Location}</Text>
+                          </View>
                         </View>
                       </View>
+                      <View className='relative   flex items-center justify-center'>
+                        <MaterialCommunityIcons name="water" size={40} color="#800000" />
+                        <Text className=' absolute text-center  text-white text-[11px] font-medium'>{data.bloodType}</Text>
+                      </View>
                     </View>
-                    <View className='relative   flex items-center justify-center'>
-                      <MaterialCommunityIcons name="water" size={40} color="#800000" />
-                      <Text className=' absolute text-center  text-white text-[11px] font-medium'>{data.bloodType}</Text>
-                    </View>
-                  </View>
-                   ))
+                  ))
                 }
               </ScrollView>
             </View>

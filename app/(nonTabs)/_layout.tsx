@@ -17,6 +17,7 @@ const Layout = () => {
       <Stack.Screen name="blood-instruction" options={{title:"bloodInstruction"}}></Stack.Screen>
       <Stack.Screen name="blood-requestAvailable" options={{title:"blood-requestAvailable"}}></Stack.Screen>
       <Stack.Screen name="donor-details" options={{title:"Blood RequestAvailable"}}></Stack.Screen>
+      <Stack.Screen name="blood-bankDetails" options={{title:"Blood bank details"}}></Stack.Screen>
     
    </Stack>
   )
