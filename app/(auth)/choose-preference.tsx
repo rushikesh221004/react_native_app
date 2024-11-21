@@ -23,12 +23,7 @@ const ChoosePreference = () => {
             d="M0,450C240,650,480,250,720,450C960,650,1200,250,1440,450L1440,300L1440,0L0,0Z"
           />
         </Svg>
-        <TouchableOpacity
-          className=" absolute left-4 bottom-24"
-          onPress={() => router.replace('./')}
-        >
-          <FontAwesome6 name="less-than" size={18} color="white" />
-        </TouchableOpacity>
+  
         <TouchableOpacity onPress={() => router.push("/(tabs)")}>
           <Text className="  text-white ml-[310px] mb-20 text-xl"> skip</Text>
         </TouchableOpacity>

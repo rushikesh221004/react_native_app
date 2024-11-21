@@ -28,7 +28,7 @@ const ForgetPassword = () => {
         </Svg>
 
         <TouchableOpacity
-          className=" absolute left-4 top-14"
+          className="absolute left-4 top-12 w-[30px] h-[30px]"
           onPress={() => router.replace("/(auth)")}
         >
           <FontAwesome6 name="less-than" size={18} color="white" />
@@ -45,11 +45,13 @@ const ForgetPassword = () => {
       </Text>
 
       <Text className=" mt-6 font-semibold text-lg ml-5 ">Email</Text>
-          <TextInput
+        <View className="px-4">
+        <TextInput
               placeholder="example@gmail.com"
               keyboardType="email-address"
-              className=" mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px] mx-5 px-4"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
+        </View>
       <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-12 mx-auto w-[350px]"
       onPress={()=> router.push('/(auth)/verification')}>
         <Text className="text-white text-center text-[15px] ">Send code</Text>

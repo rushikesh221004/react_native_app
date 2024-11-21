@@ -16,10 +16,13 @@ const BloodInstruction = () => {
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
                 <View className='fixed top-5 flex flex-row items-center justify-between px-5'>
-                    <TouchableOpacity
+                     <TouchableOpacity className=' '
                         onPress={() => router.push('../(tabs)/')}>
-                        <FontAwesome6 name="less-than" size={18} color="black" />
+                          <View className='w-[30px] h-[30px]   flex items-center justify-center'>
+                    <FontAwesome6 name="less-than" size={18} color="black"  />
+                    </View>
                     </TouchableOpacity>
+                  
                     <View><Text className='font-bold text-2xl'>Blood Instruction</Text></View>
                     <TouchableOpacity
                         onPress={() => router.push('../(nonTabs)/notification')}>

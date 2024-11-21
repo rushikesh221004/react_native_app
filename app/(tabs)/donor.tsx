@@ -74,13 +74,13 @@ const Find_Donor = () => {
             <TextInput
               placeholder="Enter blood unit"
               keyboardType='numeric'
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
             <Text className="font-semibold text-lg mt-4">Enter your Location</Text>
             <TextInput
               placeholder="Enter your location"
-              className="w-full px-4 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[15px]"
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
           </View>
