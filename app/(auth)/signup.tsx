@@ -5,6 +5,7 @@ import Svg, { Path } from 'react-native-svg';
 import { useFonts } from 'expo-font';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { Ionicons } from '@expo/vector-icons';
 
 const SignUp = () => {
   const router = useRouter();
@@ -34,7 +35,8 @@ const SignUp = () => {
           </Svg>
           <TouchableOpacity className=' absolute left-4 top-12   w-[30px] h-[30px]'
           onPress={()=> router.replace('/')}>
-          <FontAwesome6 name="less-than" size={18} color="white"/>
+          
+          <Ionicons name="chevron-back-outline" size={25} color="white" />
           </TouchableOpacity>
           <Text className='  text-white absolute text-5xl ' style={{ fontFamily: 'SpecialElite' }}>Sign Up</Text>
 

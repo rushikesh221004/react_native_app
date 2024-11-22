@@ -14,7 +14,8 @@ const Need = () => {
         <View className='fixed top-5 flex flex-row items-center justify-between px-5'>
           <TouchableOpacity className='w-[30px] h-[30px]   flex justify-center'
             onPress={() => router.push('/')}>
-            <FontAwesome6 name="less-than" size={18} color="black" />
+           
+            <Ionicons name="chevron-back-outline" size={25} color="black" />
           </TouchableOpacity>
           <View><Text className='font-bold text-2xl'>Blood Needed</Text></View>
           <TouchableOpacity

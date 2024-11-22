@@ -3,7 +3,7 @@ import { Text, TextInput, View, TouchableOpacity, } from "react-native";
 import { useFonts } from 'expo-font';
 import Svg, { Path } from 'react-native-svg';
 import { useRouter } from 'expo-router';
-import { AntDesign, FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign, FontAwesome, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 const Login = () => {
@@ -36,7 +36,8 @@ const Login = () => {
         </Svg>
         <TouchableOpacity className=' absolute left-4 top-12 w-[30px] h-[30px]'
           onPress={() => router.replace('/(auth)/signup')}>
-          <FontAwesome6 name="less-than" size={18} color="white" />
+    
+          <Ionicons name="chevron-back-outline" size={25} color="white" />
         </TouchableOpacity>
         <Text className='text-5xl   text-white absolute'
           style={{ fontFamily: 'SpecialElite' }}>Login</Text>
@@ -83,9 +84,12 @@ const Login = () => {
               </Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-12 mx-auto w-[350px]"
-          onPress={()=> router.push('./choose-preference')}>
-            <Text className="text-white text-center text-[15px] ">Login</Text>
+         
+          <TouchableOpacity
+            className="bg-[#800000] w-full text-center py-3 rounded-lg mt-10"
+            onPress={() => router.push('./choose-preference')}
+          >
+            <Text className="text-white text-center font-medium text-[15px]">Login</Text>
           </TouchableOpacity>
         </View>
         <View className="flex flex-row items-center justify-center mt-5">

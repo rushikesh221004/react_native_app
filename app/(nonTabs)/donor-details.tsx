@@ -2,7 +2,7 @@
 import { View, Text, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
 import { router, useRouter } from 'expo-router'
-import { FontAwesome6 } from '@expo/vector-icons';
+import { FontAwesome6, Ionicons } from '@expo/vector-icons';
 
 const DonorDetails = () => {
     const rounter = useRouter();
@@ -12,8 +12,7 @@ const DonorDetails = () => {
               <View className=' absolute left-6 w-[30px] h-[30px] flex justify-center'>
               <TouchableOpacity 
                 onPress={() => router.push('../(tabs)')}>
-                <FontAwesome6 name="less-than" size={18} color="black"
-                 />
+               <Ionicons name="chevron-back-outline" size={25} color="black" />
             </TouchableOpacity>
               </View>
           

@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Switch } from 'react-native'
 import React, { useState } from 'react'
-import { FontAwesome, FontAwesome6, Fontisto, MaterialIcons } from '@expo/vector-icons'
+import { FontAwesome, FontAwesome6, Fontisto, Ionicons, MaterialIcons } from '@expo/vector-icons'
 import Svg, { Path } from 'react-native-svg'
 import { useRouter } from 'expo-router'
 import { useFonts } from 'expo-font'
@@ -35,7 +35,8 @@ const Profile = () => {
         <View className='fixed top-8 flex flex-row items-center justify-between px-5'>
           <TouchableOpacity className='w-[30px] h-[30px] flex justify-center'
             onPress={() => router.push('../(tabs)/')}>
-            <FontAwesome6 name="less-than" size={18} color="white" />
+            
+            <Ionicons name="chevron-back-outline" size={25} color="white" />
           </TouchableOpacity>
           <View>
             <Text className=' text-[24px] text-white '
@@ -53,7 +54,7 @@ const Profile = () => {
       </View>
 
       <View className='px-5 mt-6'>
-        <View className='px-6 flex flex-row items-center justify-between bg-white py-5 rounded-2xl   shadow-gray-500 shadow-xl'>
+        <View className='px-6 flex flex-row items-center justify-between bg-white py-5 rounded-2xl  shadow-gray-500 shadow-xl'>
           <View className='flex flex-col items-center justify-center'>
             <FontAwesome name="heartbeat" size={28} color="#800000" />
             <Text className='text-[11px] mt-1 font-normal'>3 life saved</Text>
@@ -69,7 +70,7 @@ const Profile = () => {
         </View>
 
         <View>
-          <View className='flex flex-row items-center justify-between mt-10 mb-2'>
+          <View className='flex flex-row items-center justify-between mt-10 mb-4'>
             <Text className='text-[14px] font-medium'>Available To Donate</Text>
             <View>
               <Switch style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.2 }] }}
@@ -82,7 +83,7 @@ const Profile = () => {
             </View>
           </View>
 
-          <View className='flex flex-row items-center justify-between mb-2 '>
+          <View className='flex flex-row items-center justify-between mb-4 '>
             <Text className='text-[14px] font-medium'>Notification</Text>
             <View>
               <Switch style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.2 }] }}
@@ -108,14 +109,14 @@ const Profile = () => {
             </View>
           </View>
 
-          <View className='flex flex-row items-center justify-between mb-4  '>
+          <View className='flex flex-row items-center justify-between mb-3  '>
             <Text className='text-[14px] font-medium'>Allow Traking</Text>
             <TouchableOpacity>
               <MaterialIcons name="navigate-next" size={28} color="black" />
             </TouchableOpacity>
           </View>
 
-          <View className='flex flex-row items-center justify-between mb-4  '>
+          <View className='flex flex-row items-center justify-between mb-3  '>
             <Text className='text-[14px] font-medium'>History</Text>
             <TouchableOpacity>
               <MaterialIcons name="navigate-next" size={28} color="black" />
