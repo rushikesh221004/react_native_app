@@ -153,7 +153,7 @@ export default function HomeScreen() {
             </View>
 
             {/* Blood needed */}
-            <View className='border-2 border-gray-400 rounded-xl mx-1 my-6 px-3 py-3 bg-white' >
+            <View className='border-2 border-gray-300 rounded-xl mx-1 my-6 px-3 py-3 bg-white' >
               <Text className='font-medium'>Blood Needed</Text>
               <View className='flex flex-row justify-between items-center mt-2 '>
 
@@ -186,15 +186,16 @@ export default function HomeScreen() {
               <View className='  flex flex-row items-center justify-between px-[1px]  '>
                 <Text className='text-[16px] font-medium px-1 mb-2'>Blood Bank</Text>
                 <TouchableOpacity
-                  onPress={() => router.replace('../(nonTabs)/blood-banks')}>
-                  <Text className='text-[12px] font-medium px-2'>See More</Text>
+                  onPress={() => router.push('../(nonTabs)/blood-banks')}>
+                  <Text className='text-[12px] font-medium '>See More</Text>
                 </TouchableOpacity>
               </View>
               <View className="flex flex-wrap flex-row justify-between py-2">
                 <TouchableOpacity
                   className='w-[48%]'
+                  onPress={()=> router.push('../(nonTabs)/blood-bankDetails')}
                  >
-                  <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1  ">
+                  <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-300 border-2 gap-1  ">
                     <View className='  p-1   rounded-full'>
                       <Image
                         style={{ width: 40, height: 40 }}
@@ -210,7 +211,7 @@ export default function HomeScreen() {
 
                 <TouchableOpacity className="w-[48%]"
                   >
-                  <View className="  bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                  <View className="  bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-300 border-2 gap-1">
                     <View className=' '>
                       <Image
                         style={{ width: 40, height: 40 }}
@@ -225,7 +226,7 @@ export default function HomeScreen() {
                 </TouchableOpacity>
 
                 <TouchableOpacity className='w-[48%]'>
-                  <View className="  bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                  <View className="  bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-300 border-2 gap-1">
                     <View className=' '>
                       <Image
                         style={{ width: 40, height: 40 }}
@@ -240,7 +241,7 @@ export default function HomeScreen() {
                 </TouchableOpacity>
 
                 <TouchableOpacity className='w-[48%]'>
-                  <View className=" bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                  <View className=" bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-300 border-2 gap-1">
                     <View className=' '>
                       <Image
                         style={{ width: 40, height: 40 }}

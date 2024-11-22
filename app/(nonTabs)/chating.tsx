@@ -79,7 +79,7 @@ const Chating = () => {
 
           <View className='flex flex-row relative items-center w-full'>
             <TextInput
-              className='text-gray-700 px-10 border-2 border-gray-400 rounded-2xl w-full py-[11px] text-[13px] font-mediumm'
+              className='text-gray-700 px-10 border-2 border-gray-400 rounded-2xl w-full py-[11px] text-[13px] font-medium'
               placeholder='Search person name'
             >
 

@@ -15,7 +15,7 @@ const RewardPoints = () => {
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
                 <View className='relative top-5 flex flex-row items-center justify-center px-5 '>
-                    <View className=' absolute left-5 w-[30px] h-[30px] flex justify-center'>
+                    <View className=' absolute left-4 w-[30px] h-[30px] flex justify-center'>
                         <TouchableOpacity
                             onPress={() => router.push('./')}>
                             <Ionicons name="chevron-back-outline" size={25} color="black" />
