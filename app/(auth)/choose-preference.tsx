@@ -54,13 +54,16 @@ const ChoosePreference = () => {
           <Text className="mt-2 text-lg font-medium">Donor</Text>
         </TouchableOpacity>
       </View>
+          <View className="px-4">
+          <TouchableOpacity
+            className="bg-[#800000] w-full text-center py-3 rounded-lg mt-10"
+            onPress={() => router.push('/(tabs)')}
+          >
+            <Text className="text-white text-center font-medium text-[15px]">Next</Text>
+          </TouchableOpacity>
+          </View>
 
-      <TouchableOpacity
-        className="bg-[#800000]  text-center py-3 rounded-lg mt-24 mx-auto w-[350px]"
-        onPress={() => router.push("/(tabs)")}
-      >
-        <Text className="text-white text-center text-[15px] ">Next</Text>
-      </TouchableOpacity>
+ 
     </View>
   );
 };

@@ -19,7 +19,8 @@ const BloodInstruction = () => {
                      <TouchableOpacity className=' '
                         onPress={() => router.push('../(tabs)/')}>
                           <View className='w-[30px] h-[30px]   flex items-center justify-center'>
-                    <FontAwesome6 name="less-than" size={18} color="black"  />
+                   
+                    <Ionicons name="chevron-back-outline" size={25} color="black" />
                     </View>
                     </TouchableOpacity>
                   

@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useRouter } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
 
 const VerificationComponent = () => {
@@ -35,7 +36,8 @@ const VerificationComponent = () => {
           </Svg>
           <TouchableOpacity className='absolute left-4 top-12 w-[30px] h-[30px]'
           onPress={() => router.replace('/(auth)/forget-password')}>
-          <FontAwesome6 name="less-than" size={18} color="white"/>
+       
+          <Ionicons name="chevron-back-outline" size={25} color="white" />
           </TouchableOpacity>
           <Text className='  text-white absolute text-4xl ' style={{ fontFamily: 'SpecialElite' }}> Verification</Text>
 
@@ -60,13 +62,16 @@ const VerificationComponent = () => {
         <TouchableOpacity>
           <Text className='text-center font-medium text-[#800000] underline text-sm'>Reset Code</Text>
         </TouchableOpacity>
+ 
 
-        <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-5 mx-auto w-[350px]"
-         onPress={() => router.push('/(auth)/reset-password')}>
-         
-            <Text className="text-white text-center text-[15px] ">Verify</Text>
-            
+        <View className='px-4'>
+        <TouchableOpacity
+            className="bg-[#800000] w-full text-center py-3 rounded-lg mt-10"
+            onPress={() => router.push('/(auth)/reset-password')}
+          >
+            <Text className="text-white text-center font-medium text-[15px]">Verify</Text>
           </TouchableOpacity>
+        </View>
       </View>
     
   );

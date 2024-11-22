@@ -5,6 +5,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { useFonts } from 'expo-font';
 import React, { useState } from 'react';
+import { Ionicons } from '@expo/vector-icons';
 
 
 const ResetPassword = () => {
@@ -33,7 +34,7 @@ const ResetPassword = () => {
         </Svg>
         <TouchableOpacity className='absolute left-4 top-12 w-[30px] h-[30px]'
           onPress={() => router.replace('/(auth)/verification')}>
-          <FontAwesome6 name="less-than" size={18} color="white" />
+        <Ionicons name="chevron-back-outline" size={25} color="white" />
         </TouchableOpacity>
         <Text className='text-[36px]   text-white absolute text-center'
           style={{ fontFamily: 'SpecialElite' }}>Reset password</Text>
@@ -71,10 +72,14 @@ const ResetPassword = () => {
               </TouchableOpacity>
               
             </View>
-            <TouchableOpacity className="bg-[#800000]  text-center py-3 rounded-lg mt-12 mx-auto w-[350px]"
-      onPress={()=> router.push('/(auth)')}>
-        <Text className="text-white text-center text-[15px] ">Reset Password</Text>
-      </TouchableOpacity>
+        <View className=''>
+        <TouchableOpacity
+            className="bg-[#800000] w-full text-center py-3 rounded-lg mt-10"
+            onPress={() => router.push('/(auth)')}
+          >
+            <Text className="text-white text-center font-medium text-[15px]">Reset Password</Text>
+          </TouchableOpacity>
+        </View>
           </View>
           </View>
     
