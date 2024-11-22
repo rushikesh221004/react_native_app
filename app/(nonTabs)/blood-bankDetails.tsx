@@ -1,7 +1,7 @@
 // import { View, Text, SafeAreaView, ScrollView ,StyleSheet, Image} from 'react-native'
 // import React, { useState } from 'react'
 // import { TouchableOpacity } from 'react-native'
-// import { FontAwesome6 } from '@expo/vector-icons'
+// import { FontAwesome6, Ionicons } from '@expo/vector-icons'
 // import { router } from 'expo-router'
 // import MapView, { Marker } from 'react-native-maps';
 

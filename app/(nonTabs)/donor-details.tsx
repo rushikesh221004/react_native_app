@@ -8,7 +8,7 @@ const DonorDetails = () => {
     const rounter = useRouter();
   return (
     <SafeAreaView>
-             <View className='relative top-5 flex flex-row items-center justify-center px-5 '>
+             <View className='relative top-5 flex flex-row items-center justify-center px-5 w-full'>
               <View className=' absolute left-6 w-[30px] h-[30px] flex justify-center'>
               <TouchableOpacity 
                 onPress={() => router.push('../(tabs)')}>

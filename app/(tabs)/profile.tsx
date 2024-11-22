@@ -32,7 +32,7 @@ const Profile = () => {
 
 
 
-        <View className='fixed top-8 flex flex-row items-center justify-between px-5'>
+        <View className='fixed top-8 flex flex-row items-center justify-between px-5 w-full'>
           <TouchableOpacity className='w-[30px] h-[30px] flex justify-center'
             onPress={() => router.push('../(tabs)/')}>
             

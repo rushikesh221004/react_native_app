@@ -175,6 +175,7 @@ export default function HomeScreen() {
                   <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1  ">
                     <View className='  p-1   rounded-full'>
                       <Image
+                      style={{width:40 ,height:40}}
                         className='h-[40px] w-[40px] '
                         source={require('../../assets/images/blood-bank.png')}
                         resizeMode="contain"
@@ -190,6 +191,7 @@ export default function HomeScreen() {
                   <View className="  bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1">
                     <View className=' '>
                       <Image
+                      style={{width:40 ,height:40}}
                         className='h-[40px] w-[40px]   '
                         source={require('../../assets/images/blood-bank.png')}
                         resizeMode="contain"
@@ -204,6 +206,7 @@ export default function HomeScreen() {
                <View className="  bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
                   <View className=' '>
                     <Image
+                    style={{width:40 ,height:40}}
                       className='h-[40px] w-[40px] '
                       source={require('../../assets/images/blood-bank.png')}
                       resizeMode="contain"
@@ -218,6 +221,7 @@ export default function HomeScreen() {
                 <View className=" bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
                   <View className=' '>
                     <Image
+                    style={{width:40 ,height:40}}
                       className='h-[40px] w-[40px]  '
                       source={require('../../assets/images/blood-bank.png')}
                       resizeMode="contain"

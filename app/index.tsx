@@ -12,6 +12,7 @@ const Index = () => {
         <View className="h-screen px-5 flex flex-col items-center justify-center">
           {/* Image Section */}
           <Image
+          style={{width:320 , height:320}}
             className="w-[320px] h-[320px] mb-12"
             source={require('../assets/images/SignIn.png')}
             resizeMode="contain"

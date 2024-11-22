@@ -16,7 +16,7 @@ const BloodRequestAvailable = () => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-                <View className="fixed top-5 flex flex-row items-center justify-between px-5">
+                <View className="fixed top-5 flex flex-row items-center justify-between px-5 w-full">
                     <TouchableOpacity onPress={() => router.push('../(tabs)/')}>
                         <Ionicons name="chevron-back-outline" size={25} color="black" />
                     </TouchableOpacity>

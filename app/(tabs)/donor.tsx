@@ -10,7 +10,7 @@ const Find_Donor = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
-        <View className='fixed top-5 flex flex-row items-center justify-between px-5'>
+        <View className='fixed top-5 flex flex-row items-center justify-between px-5 w-full'>
           <TouchableOpacity
             onPress={() => router.push('/')}>
            
