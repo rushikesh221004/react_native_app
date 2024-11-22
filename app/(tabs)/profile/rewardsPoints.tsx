@@ -44,7 +44,7 @@ const RewardPoints = () => {
                         <View className="flex flex-row items-center bg-white rounded-lg shadow-md px-4 py-3 mt-4">
                             {/* Icon Section */}
                             <View className="w-12 h-12 bg-[#800000] rounded-full flex items-center justify-center">
-                                <FontAwesome5 name="hand-holding-heart" size={20} color="#fff" />
+                                <FontAwesome5 name="hand-holding-heart" size={22} color="#fff" />
                             </View>
 
                             {/* Text Section */}
@@ -58,7 +58,7 @@ const RewardPoints = () => {
                         <View className="flex flex-row items-center bg-white rounded-lg shadow-md px-4 py-3 mt-4">
                             {/* Icon Section */}
                             <View className="w-12 h-12 bg-[#800000] rounded-full flex items-center justify-center">
-                                <FontAwesome5 name="user-md" size={20} color="#fff" />
+                                <FontAwesome5 name="user-md" size={23} color="#fff" />
                             </View>
 
                             {/* Text Section */}
@@ -72,7 +72,7 @@ const RewardPoints = () => {
                         <View className="flex flex-row items-center bg-white rounded-lg shadow-md px-4 py-3 mt-4">
                             {/* Icon Section */}
                             <View className="w-12 h-12 bg-[#800000] rounded-full flex items-center justify-center">
-                                <FontAwesome6 name="person-walking" size={24} color="white" />
+                                <FontAwesome6 name="person-walking" size={26} color="white" />
                             </View>
 
                             {/* Text Section */}
@@ -84,7 +84,7 @@ const RewardPoints = () => {
                             </View>
                         </View>
 
-                        <View className="flex-1 bg-gray-100 mt-6">
+                        <View className="flex-1 bg-gray-100 my-6">
                             {/* Top Section - Progress Bar */}
                             <Text className="text-center font-bold text-lg text-gray-700 mb-4">
                                 You have saved 6 valuable lives till now
@@ -99,7 +99,7 @@ const RewardPoints = () => {
                                 <View className="flex items-center">
                                     <Text className=" text-sm text-gray-600 mb-2">Donator</Text>
                                     <View className="w-16 h-16 bg-[#800000] rounded-full flex items-center justify-center">
-                                        <FontAwesome5 name="hand-holding-heart" size={20} color="#fff" />
+                                        <FontAwesome5 name="hand-holding-heart" size={26} color="#fff" />
                                     </View>
 
                                 </View>
@@ -108,7 +108,7 @@ const RewardPoints = () => {
                                 <View className="flex items-center">
                                     <Text className=" text-lg font-bold text-gray-700 mb-3">Life Savior</Text>
                                     <View className="w-20 h-20 bg-[#800000] rounded-full flex items-center justify-center">
-                                        <FontAwesome5 name="user-md" size={30} color="#fff" />
+                                        <FontAwesome5 name="user-md" size={32} color="#fff" />
                                     </View>
 
                                 </View>
@@ -117,7 +117,7 @@ const RewardPoints = () => {
                                 <View className="flex items-center">
                                     <Text className=" text-sm text-gray-600">Superhero</Text>
                                     <View className="w-16 h-16 bg-[#800000] rounded-full flex items-center justify-center mt-2">
-                                        <FontAwesome5 name="superpowers" size={20} color="#fff" />
+                                    <FontAwesome6 name="person-walking" size={30} color="white" />
                                     </View>
 
                                 </View>

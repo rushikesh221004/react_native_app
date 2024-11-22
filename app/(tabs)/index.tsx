@@ -153,29 +153,51 @@ export default function HomeScreen() {
             </View>
 
             {/* Blood needed */}
-            <View className='border-2 border-gray-400 rounded-xl mx-1 my-6 px-3 py-3' >
+            <View className='border-2 border-gray-400 rounded-xl mx-1 my-6 px-3 py-3 bg-white' >
               <Text className='font-medium'>Blood Needed</Text>
               <View className='flex flex-row justify-between items-center mt-2 '>
-                <Ionicons name="water-outline" size={27} color="#800000" />
-                <Ionicons name="water-outline" size={27} color="#800000" />
-                <Ionicons name="water-outline" size={27} color="#800000" />
-                <Ionicons name="water-outline" size={27} color="#800000" />
-                <Ionicons name="water-outline" size={27} color="#800000" />
-                <Ionicons name="water-outline" size={27} color="#800000" />
+
+                <View className='relative   flex items-center justify-center'>
+                  <Ionicons name="water" size={40} color="#800000" />
+                  <Text className=' absolute text-center  text-white text-[11px] font-medium'>A</Text>
+                </View>
+                <View className='relative   flex items-center justify-center'>
+                  <Ionicons name="water" size={40} color="#800000" />
+                  <Text className=' absolute text-center  text-white text-[11px] font-medium'>O</Text>
+                </View>
+                <View className='relative   flex items-center justify-center'>
+                  <Ionicons name="water" size={40} color="#800000" />
+                  <Text className=' absolute text-center  text-white text-[11px] font-medium'>B+</Text>
+                </View>
+                <View className='relative   flex items-center justify-center'>
+                  <Ionicons name="water" size={40} color="#800000" />
+                  <Text className=' absolute text-center  text-white text-[11px] font-medium'>AB</Text>
+                </View>
+                <View className='relative   flex items-center justify-center'>
+                  <Ionicons name="water" size={40} color="#800000" />
+                  <Text className=' absolute text-center  text-white text-[11px] font-medium'>B+</Text>
+                </View>
+
 
               </View>
             </View>
 
             <View>
-              <Text className='text-[16px] font-medium px-1 mb-2'>Blood Bank</Text>
+              <View className='  flex flex-row items-center justify-between px-[1px]  '>
+                <Text className='text-[16px] font-medium px-1 mb-2'>Blood Bank</Text>
+                <TouchableOpacity
+                  onPress={() => router.replace('../(nonTabs)/blood-banks')}>
+                  <Text className='text-[12px] font-medium px-2'>See More</Text>
+                </TouchableOpacity>
+              </View>
               <View className="flex flex-wrap flex-row justify-between py-2">
                 <TouchableOpacity
                   className='w-[48%]'
-                  onPress={() => router.push('../(nonTabs)/blood-bankDetails')}>
+                 >
                   <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1  ">
                     <View className='  p-1   rounded-full'>
                       <Image
-                      style={{width:40 ,height:40}}
+                        style={{ width: 40, height: 40 }}
                         className='h-[40px] w-[40px] '
                         source={require('../../assets/images/blood-bank.png')}
                         resizeMode="contain"
@@ -187,11 +209,11 @@ export default function HomeScreen() {
                 </TouchableOpacity>
 
                 <TouchableOpacity className="w-[48%]"
-                  onPress={() => router.push('../(nonTabs)/blood-bankDetails')}>
+                  >
                   <View className="  bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-400 border-2 gap-1">
                     <View className=' '>
                       <Image
-                      style={{width:40 ,height:40}}
+                        style={{ width: 40, height: 40 }}
                         className='h-[40px] w-[40px]   '
                         source={require('../../assets/images/blood-bank.png')}
                         resizeMode="contain"
@@ -201,35 +223,35 @@ export default function HomeScreen() {
                     <Text className='text-[10px] font-medium text-center'>Location : Farshi Road, Khamagon</Text>
                   </View>
                 </TouchableOpacity>
-               
-               <TouchableOpacity className='w-[48%]'>
-               <View className="  bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
-                  <View className=' '>
-                    <Image
-                    style={{width:40 ,height:40}}
-                      className='h-[40px] w-[40px] '
-                      source={require('../../assets/images/blood-bank.png')}
-                      resizeMode="contain"
-                    />
-                  </View>
-                  <Text className="font-semibold text-[14px] text-center">Jeevan Jyoti Blood Bank</Text>
-                  <Text className='text-[10px] font-medium text-center'>Location : Malkapur</Text>
-                </View>
-               </TouchableOpacity>
-                
+
                 <TouchableOpacity className='w-[48%]'>
-                <View className=" bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
-                  <View className=' '>
-                    <Image
-                    style={{width:40 ,height:40}}
-                      className='h-[40px] w-[40px]  '
-                      source={require('../../assets/images/blood-bank.png')}
-                      resizeMode="contain"
-                    />
+                  <View className="  bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                    <View className=' '>
+                      <Image
+                        style={{ width: 40, height: 40 }}
+                        className='h-[40px] w-[40px] '
+                        source={require('../../assets/images/blood-bank.png')}
+                        resizeMode="contain"
+                      />
+                    </View>
+                    <Text className="font-semibold text-[14px] text-center">Jeevan Jyoti Blood Bank</Text>
+                    <Text className='text-[10px] font-medium text-center'>Location : Malkapur</Text>
                   </View>
-                  <Text className="font-semibold text-[14px] text-center">Lilavati Blood Bank </Text>
-                  <Text className='text-[10px] font-medium text-center'>Location : Malkapur road, Buldhana</Text>
-                </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity className='w-[48%]'>
+                  <View className=" bg-white items-center justify-center mb-2 p-2 rounded-xl border-gray-400 border-2 gap-1">
+                    <View className=' '>
+                      <Image
+                        style={{ width: 40, height: 40 }}
+                        className='h-[40px] w-[40px]  '
+                        source={require('../../assets/images/blood-bank.png')}
+                        resizeMode="contain"
+                      />
+                    </View>
+                    <Text className="font-semibold text-[14px] text-center">Lilavati Blood Bank </Text>
+                    <Text className='text-[10px] font-medium text-center'>Location : Malkapur road, Buldhana</Text>
+                  </View>
                 </TouchableOpacity>
               </View>
             </View>

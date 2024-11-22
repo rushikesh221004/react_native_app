@@ -34,13 +34,13 @@ const Profile = () => {
 
 
 
-        <View className='fixed top-8 flex flex-row items-center justify-between px-5 w-full'>
-          <TouchableOpacity className='w-[30px] h-[30px] flex justify-center'
+        <View className='fixed top-8 flex flex-row items-center justify-between px-5 w-full '>
+          <TouchableOpacity className='w-[30px] h-[30px]  flex items-center justify-center  '
             onPress={() => router.push('../(tabs)/')}>
 
             <Ionicons name="chevron-back-outline" size={25} color="white" />
           </TouchableOpacity>
-          <View>
+          <View className='mr-2'>
             <Text className=' text-[24px] text-white '
               style={{ fontFamily: 'SpecialElite' }}>Selena Ahmed</Text>
             <Text className='text-white text-center text-[11px] font-medium'>User ID: 542684</Text>
@@ -129,7 +129,7 @@ const Profile = () => {
         <Text className='text-[14px] font-medium'>Payment Info</Text>
         </View>
             <TouchableOpacity
-            onPress={()=> router.push('../profile/paymentInfo')}>
+            >
               <MaterialIcons name="navigate-next" size={28} color="black" />
             </TouchableOpacity>
           </View>

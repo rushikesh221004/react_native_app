@@ -48,6 +48,14 @@ const UserHistory = () => {
       rating: 5,
       bloodGroup: "B+",
     },
+    {
+      id: 6,
+      name: "Zahid Khan",
+      location: "Ibne Sina Hospital",
+      donationDate: "08 January, 2022",
+      rating: 5,
+      bloodGroup: "B+",
+    },
   ];
 
   const renderRatingStars = (rating: number) => {
@@ -113,9 +121,9 @@ const UserHistory = () => {
                   <View>{renderRatingStars(donor.rating)}</View>
                 </View>
               </View>
-              <View className='relative   flex items-center justify-center'>
+              <View className='relative   flex items-center justify-center  '>
                 <Ionicons name="water" size={50} color="#800000" />
-                <Text className=' absolute text-center  text-white text-[13px] font-medium '>{donor.bloodGroup}</Text>
+                <Text className=' absolute    text-white text-[13px] font-medium '>{donor.bloodGroup}</Text>
               </View>
             </View>
           ))}

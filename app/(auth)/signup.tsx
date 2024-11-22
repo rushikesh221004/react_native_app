@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, TextInput, TouchableOpacity, } from 'react-native';
 import { useRouter } from 'expo-router';
 import Svg, { Path } from 'react-native-svg';
 import { useFonts } from 'expo-font';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { Picker } from '@react-native-picker/picker';
+
+
 
 const SignUp = () => {
   const router = useRouter();
@@ -15,6 +18,8 @@ const SignUp = () => {
     SpecialElite: require('../../assets/fonts/SpecialElite-Regular.ttf'),
 
   });
+  const [gender, setGender] = useState('');
+  const [isPickerVisible, setPickerVisible] = useState(false);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -34,9 +39,9 @@ const SignUp = () => {
 
           </Svg>
           <TouchableOpacity className=' absolute left-4 top-12   w-[30px] h-[30px]'
-          onPress={()=> router.replace('/')}>
-          
-          <Ionicons name="chevron-back-outline" size={25} color="white" />
+            onPress={() => router.replace('/')}>
+
+            <Ionicons name="chevron-back-outline" size={25} color="white" />
           </TouchableOpacity>
           <Text className='  text-white absolute text-5xl ' style={{ fontFamily: 'SpecialElite' }}>Sign Up</Text>
 
@@ -63,17 +68,45 @@ const SignUp = () => {
               keyboardType="email-address"
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
+            <Text className="font-semibold text-lg mt-5">Mobile No.</Text>
+            <TextInput
+              placeholder="Enter Mobile No."
+              keyboardType='numeric'
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
+            />
+
+            <Text className="font-semibold text-lg mt-5">Location</Text>
+            <TextInput
+              placeholder="Enter Your Location"
+              keyboardType='numeric'
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
+            />
+
+
+            <Text className="font-semibold text-lg mt-5">Blood Group</Text>
+            <TextInput
+              placeholder="Enter Blood Group ex: A+ B O+"
+             
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
+            />
+
+            <Text className="font-semibold text-lg mt-5">Enter Gender</Text>
+            <TextInput
+              placeholder="Male or Female"
+           
+              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
+            />
             <Text className="font-semibold text-lg mt-5">Password</Text>
             <View className=' flex flex-row  justify-end items-center  relative'>
 
               <TextInput
                 placeholder="**************"
-               
+
                 className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
                 secureTextEntry={!passwordVisible}
               />
               <TouchableOpacity className=' absolute right-5'
-              onPress={() => setPasswordVisible(!passwordVisible)} >
+                onPress={() => setPasswordVisible(!passwordVisible)} >
                 <MaterialCommunityIcons name="eye" size={23} color='#4b5563' />
               </TouchableOpacity>
             </View>
@@ -88,11 +121,16 @@ const SignUp = () => {
                 secureTextEntry={!confirmPasswordVisible}
                 className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
               />
+
+
               <TouchableOpacity className=' absolute right-5'
-              onPress={() => setConfirmPasswordVisible(!confirmPasswordVisible)} >
+                onPress={() => setConfirmPasswordVisible(!confirmPasswordVisible)} >
                 <MaterialCommunityIcons name="eye" size={23} color='#4b5563' />
               </TouchableOpacity>
             </View>
+
+
+
           </View>
 
           <TouchableOpacity
@@ -104,7 +142,7 @@ const SignUp = () => {
 
           <TouchableOpacity
             className="border-2 border-[#800000] w-full text-center py-3 rounded-lg mt-4"
-            
+
           >
             <Text className="text-[#800000] text-center font-medium text-[15px]">
               Sign in with Google
