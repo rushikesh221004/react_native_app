@@ -16,7 +16,7 @@ const BloodRequestAvailable = () => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-                <View className="fixed top-5 flex flex-row items-center justify-between px-5">
+                <View className="fixed top-5 flex flex-row items-center justify-between px-5 w-full">
                     <TouchableOpacity onPress={() => router.push('../(tabs)/')}>
                         <Ionicons name="chevron-back-outline" size={25} color="black" />
                     </TouchableOpacity>
@@ -55,7 +55,7 @@ const BloodRequestAvailable = () => {
                             <View className="flex flex-row justify-between items-center w-full">
                                 <TouchableOpacity className="flex-1 mr-2">
                                     <Text className="bg-[#800000] text-white py-2 rounded-2xl font-medium text-center text-lg border-gray-300 border-2 shadow-xl shadow-gray-800">
-                                        Accept
+                                        Donate Now
                                     </Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity className="flex-1 ml-2">

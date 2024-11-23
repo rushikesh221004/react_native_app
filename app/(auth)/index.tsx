@@ -93,8 +93,8 @@ const Login = () => {
           </TouchableOpacity>
         </View>
         <View className="flex flex-row items-center justify-center mt-5">
-          <View className="border-b border-[#800000] w-24 ml-5"></View>
-          <Text className="px-3 text-lg font-medium">or continue with</Text>
+          <View className="border-b border-[#800000] w-20 ml-5"></View>
+          <Text className="px-3 text-lg font-medium text-nowrap">or continue with</Text>
           <View className="border-b w-24 mr-5 border-[#800000]"></View>
         </View>
 
@@ -107,12 +107,12 @@ const Login = () => {
             className="p-1 text-6x rounded-full flex justify-center items-center"
           />
           </View>
-         <View className="flex items-center justify-center ">
+         <View className="w-[40px] h-[40px]  flex items-center justify-center bg-sky-600 rounded-full ">
          <FontAwesome
             name="facebook-f"
             size={30}
             color="#fff"
-            className=" bg-sky-600 w-[40px] h-[40px] p-[5px]  rounded-full"
+        
           />
          </View>
          <View className="flex items-center justify-center">
