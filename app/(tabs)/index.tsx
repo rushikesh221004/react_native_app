@@ -7,6 +7,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import Feather from '@expo/vector-icons/Feather';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function HomeScreen() {
@@ -70,50 +71,80 @@ export default function HomeScreen() {
                 <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3 px-4  flex  items-start justify-center   '>
                   <View className='flex flex-col justify-start items-start gap-1'>
 
-                    <Text className='text-[11px] font-medium'>You can decome a blood donar in</Text>
+                    <Text className='text-[12px] font-medium'>Upcoming blood donation evnet</Text>
 
-                    <View className='  flex flex-row items-center '>
-                      <Text className='font-semibold text-4xl'>2</Text>
-                      <Text className='font-medium text-[8px] ml-1 w-[30px] '>Easy Steps</Text>
+                    <Text className='font-semibold text-[17px] text-[#800000] mb-[-7px]'>Blood Donor Day 2024</Text>
+                    <Text className='text-[11px] font-medium '>G. S. College, Khamagon</Text>
 
+                    <View className='w-full flex flex-row justify-between'>
+                      <Text className='font-semibold text-[13px] text-gray-900'>Jun 14, 2024</Text>
+                      <Text className='font-semibold text-[13px] text-gray-900'>10 am To 04 pm</Text>
                     </View>
 
-                    <TouchableOpacity
+
+                  </View>
+
+                </View>
+                <LinearGradient
+                 colors={['#800000', '#ff99ff']} // Red to Light Purple gradient colors
+                  style={{
+                    width: 250,
+                    height: 100,
+                    marginRight: 20,
+                    borderRadius: 20,
+                    padding: 12,
+                    flexDirection: 'row',
+                    alignItems: 'flex-start',
+                    justifyContent: 'center',
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.8,
+                    shadowRadius: 3,
+                  }}
+                >
+                  <View className='  '>
+                    <View className='flex flex-col justify-start items-start gap-1'>
+                      <Text className='text-[12px] font-medium text-white'>
+                        Upcoming blood donation event
+                      </Text>
+                      <Text className='font-semibold text-[17px]   mb-[-7px] text-white'>
+                        International Women's Day
+                      </Text>
+                      <Text className='text-[11px] font-medium text-gray-100'>
+                        Government Hospital, Khamagon
+                      </Text>
+                      <View className='w-full flex flex-row justify-between'>
+                        <Text className='font-semibold text-[14px] text-white'>
+                          Mar 08, 2024
+                        </Text>
+                        <Text className='font-semibold text-[14px] text-white'>
+                          10 am To 04 pm
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </LinearGradient>
+                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3 px-4  flex  items-start justify-center   '>
+                  <View className='flex flex-col justify-start items-start gap-1'>
+
+                    <Text className='text-[12px] font-medium'>Upcoming blood donation evnet</Text>
+
+                    <Text className='font-semibold text-[17px] text-[#800000] mb-[-7px]'>Blood Donor Day 2024</Text>
+                    <Text className='text-[11px] font-medium '>G. S. College, Khamagon</Text>
+
+                    <View className='w-full flex flex-row justify-between '>
+                      <Text className='font-semibold text-[14px] text-gray-900'>Aug 05, 2024</Text>
+                      <Text className='font-semibold text-[14px] text-gray-900'>10 am To 04 pm</Text>
+                    </View>
+
+
+
+
+
+                    {/* <TouchableOpacity
                       onPress={() => router.push('../(nonTabs)/donor-details')}>
                       <Text className='text-[#800000] text-[12px] underline font-medium'>Become a Donar Now</Text>
-                    </TouchableOpacity>
-
-                  </View>
-
-                </View>
-                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3 px-4  flex  items-start justify-center  '>
-                  <View className='flex flex-col justify-start items-start gap-1'>
-
-                    <Text className='text-[11px] font-medium'>You can decome a blood donar in</Text>
-
-                    <View className='  flex flex-row items-center '>
-                      <Text className='font-semibold text-4xl'>2</Text>
-                      <Text className='font-medium text-[8px] ml-1 w-[30px] '>Easy Steps</Text>
-
-                    </View>
-
-                    <Text className='text-[#800000] text-[12px] underline font-medium'>Become a Donar Now</Text>
-
-                  </View>
-
-                </View>
-                <View className='bg-white rounded-2xl w-[250px] h-[100px] mr-5  shadow-md  shadow-gray-900 p-3 px-4 flex  items-start justify-center '>
-                  <View className='flex flex-col justify-start items-start gap-1'>
-
-                    <Text className='text-[11px] font-medium'>You can decome a blood donar in</Text>
-
-                    <View className='  flex flex-row items-center '>
-                      <Text className='font-semibold text-4xl'>2</Text>
-                      <Text className='font-medium text-[8px] ml-1 w-[30px] '>Easy Steps</Text>
-
-                    </View>
-
-                    <Text className='text-[#800000] text-[12px] underline font-medium'>Become a Donar Now</Text>
+                    </TouchableOpacity> */}
 
                   </View>
 
@@ -125,7 +156,8 @@ export default function HomeScreen() {
 
           </View>
           {/* Main Form */}
-          <View className='px-5  mt-3   '>
+          <View className='px-5  mt-1   '>
+           
 
             {/* find donor blood instru and req for blood section */}
             <View className=' px-1 flex flex-row  items-center justify-between  '>
@@ -193,8 +225,8 @@ export default function HomeScreen() {
               <View className="flex flex-wrap flex-row justify-between py-2">
                 <TouchableOpacity
                   className='w-[48%]'
-                  onPress={()=> router.push('../(nonTabs)/blood-bankDetails')}
-                 >
+                  onPress={() => router.push('../(nonTabs)/blood-bankDetails')}
+                >
                   <View className=" bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-300 border-2 gap-1  ">
                     <View className='  p-1   rounded-full'>
                       <Image
@@ -210,7 +242,7 @@ export default function HomeScreen() {
                 </TouchableOpacity>
 
                 <TouchableOpacity className="w-[48%]"
-                  >
+                >
                   <View className="  bg-white items-center justify-center mb-4 p-2 rounded-xl border-gray-300 border-2 gap-1">
                     <View className=' '>
                       <Image
