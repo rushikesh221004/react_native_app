@@ -107,12 +107,12 @@ const Login = () => {
             className="p-1 text-6x rounded-full flex justify-center items-center"
           />
           </View>
-         <View className="flex items-center justify-center ">
+         <View className="w-[40px] h-[40px]  flex items-center justify-center bg-sky-600 rounded-full ">
          <FontAwesome
             name="facebook-f"
             size={30}
             color="#fff"
-            className=" bg-sky-600 w-[40px] h-[40px] p-[5px]  rounded-full"
+        
           />
          </View>
          <View className="flex items-center justify-center">

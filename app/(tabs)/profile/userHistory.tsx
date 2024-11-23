@@ -94,7 +94,7 @@ const UserHistory = () => {
           {donors.map((donor) => (
             <View
               key={donor.id}
-              className="flex flex-row items-center bg-white shadow-md rounded-xl px-4 py-3  mb-4 border-2 border-gray-300"
+              className="flex flex-row items-center bg-white   rounded-xl px-4 py-3  mb-4 border-2 border-gray-200"
             >
               {/* Red Circle */}
               <View className="w-[50px] h-[50px] bg-[#800000] rounded-full flex items-center justify-center">

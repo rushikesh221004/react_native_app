@@ -68,7 +68,7 @@ export default function BloodBankDetails() {
             <Text className="text-[12px]">2536456589</Text>
           </View>
 
-          {/* Map View */}
+         
           <View style={styles.container}>
             <MapView style={styles.map} region={mapRegion} showsUserLocation={true}>
               <Marker coordinate={mapRegion} title="Dr. Sony Blood Bank" />

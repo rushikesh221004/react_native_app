@@ -39,7 +39,7 @@ const SignUp = () => {
           </Svg>
           <TouchableOpacity
             className="absolute left-4 top-12 w-[30px] h-[30px]"
-            onPress={() => router.replace('/')}
+            onPress={() => router.replace('../')}
           >
             <Ionicons name="chevron-back-outline" size={25} color="white" />
           </TouchableOpacity>

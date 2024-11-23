@@ -161,14 +161,14 @@ const Find_Donor = () => {
               >
 
               </TextInput>
-              <Feather className=' absolute  left-3 top-4' name="search" size={20} color="#9ca3af" />
+              <Feather className=' absolute  left-3 top-[13px]' name="search" size={20} color="#9ca3af" />
             </View>
 
             <View className="">
               {donors.map((donor) => (
                 <View
                   key={donor.id}
-                  className="flex flex-row items-center bg-white shadow-md rounded-xl px-4 py-3  mb-4 border-2 border-gray-200"
+                  className="flex flex-row items-center bg-white  rounded-xl px-4 py-3  mb-4 border-2 border-gray-200  "
                 >
                   {/* Red Circle */}
                   <View className="w-[53px] h-[53px] bg-[#800000] rounded-full flex items-center justify-center">
@@ -177,15 +177,13 @@ const Find_Donor = () => {
 
                   {/* Donor Details */}
                   <View className="flex-1 ml-4">
-                    <Text className="font-bold text-lg text-gray-800">
+                    <Text className="font-semibold text-lg text-gray-800">
                       {donor.name}
                     </Text>
                     <Text className="text-gray-600 text-sm font-medium">
                       Location: {donor.location}
                     </Text>
-
-                    {/* <View className="mt-1 flex "><Text>Your Rating:</Text>
-                {renderRatingStars(donor.rating)}</View> */}
+ 
                     <View className="flex flex-row w-full px-[1px] items-center gap-2">
                       <Text className=" text-gray-600 text-sm font-medium">Your Rating:</Text>
                       <View>{renderRatingStars(donor.rating)}</View>
@@ -201,12 +199,7 @@ const Find_Donor = () => {
 
           </View>
 
-
-          {/* <TouchableOpacity
-            className="bg-[#800000] w-full text-center py-[12px] rounded-lg mt-16" >
-            <Text className="text-white text-center font-medium text-[15px]">Find Donor</Text>
-          </TouchableOpacity> */}
-
+ 
 
 
         </View>

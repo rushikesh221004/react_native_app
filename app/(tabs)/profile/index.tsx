@@ -36,7 +36,7 @@ const Profile = () => {
 
         <View className='fixed top-8 flex flex-row items-center justify-between px-5 w-full '>
           <TouchableOpacity className='w-[30px] h-[30px]  flex items-center justify-center  '
-            onPress={() => router.push('../(tabs)/')}>
+            onPress={() => router.push('/')}>
 
             <Ionicons name="chevron-back-outline" size={25} color="white" />
           </TouchableOpacity>
@@ -73,10 +73,10 @@ const Profile = () => {
 
         <View>
           <View className='flex flex-row items-center justify-between mt-10 mb-4'>
-           <View  className='flex flex-row gap-4'>
-           <MaterialIcons name="event-available" size={24} color="#800000" />
-           <Text className='text-[14px] font-medium'>Available To Donate</Text>
-           </View>
+            <View className='flex flex-row gap-4'>
+              <MaterialIcons name="event-available" size={24} color="#800000" />
+              <Text className='text-[14px] font-medium'>Available To Donate</Text>
+            </View>
             <View>
               <Switch style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.2 }] }}
                 trackColor={{ false: '#767577', true: '#800000' }}
@@ -90,64 +90,76 @@ const Profile = () => {
 
 
 
-          <View className='flex flex-row items-center justify-between mb-3  '>
-        <View className='flex flex-row gap-4'>
-        <Ionicons name="location-outline" size={24} color="#800000" />
-        <Text className='text-[14px] font-medium'>Manage Address</Text>
-        </View>
-            <TouchableOpacity 
-            onPress={()=> router.push('../profile/manageAddress')}>
+          <TouchableOpacity
+            onPress={() => router.push('../profile/manageAddress')}>
+            <View className='flex flex-row items-center justify-between mb-3  '>
+              <View className='flex flex-row gap-4'>
+                <Ionicons name="location-outline" size={24} color="#800000" />
+                <Text className='text-[14px] font-medium'>Manage Address</Text>
+              </View>
+
+
               <MaterialIcons name="navigate-next" size={28} color="black" />
-            </TouchableOpacity>
-          </View>
 
-          <View className='flex flex-row items-center justify-between mb-3  '>
-    <View className='flex flex-row gap-4'>
-    <Entypo name="trophy" size={24} color="#800000" />
-    <Text className='text-[14px] font-medium'>Rewards Points</Text>
-    </View>
-            <TouchableOpacity
-            onPress={()=> router.push('../profile/rewardsPoints')}>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => router.push('../profile/rewardsPoints')}>
+            <View className='flex flex-row items-center justify-between mb-3  '>
+              <View className='flex flex-row gap-4'>
+                <Entypo name="trophy" size={24} color="#800000" />
+                <Text className='text-[14px] font-medium'>Rewards Points</Text>
+              </View>
+
+
               <MaterialIcons name="navigate-next" size={28} color="black" />
-            </TouchableOpacity>
-          </View>
 
-          <View className='flex flex-row items-center justify-between mb-3  '>
-         <View className='flex flex-row gap-4'>
-         <MaterialIcons name="history" size={24} color="#800000" />
-         <Text className='text-[14px] font-medium'>History</Text>
-         </View>
-            <TouchableOpacity
-            onPress={()=> router.push('../profile/userHistory')}>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => router.push('../profile/userHistory')}>
+            <View className='flex flex-row items-center justify-between mb-3  '>
+              <View className='flex flex-row gap-4'>
+                <MaterialIcons name="history" size={24} color="#800000" />
+                <Text className='text-[14px] font-medium'>History</Text>
+              </View>
+
+
               <MaterialIcons name="navigate-next" size={28} color="black" />
-            </TouchableOpacity>
-          </View>
 
-          <View className='flex flex-row items-center justify-between mb-2 '>
-        <View className='flex flex-row gap-4'>
-        <MaterialIcons name="payment" size={24} color="#800000" />
-        <Text className='text-[14px] font-medium'>Payment Info</Text>
-        </View>
-            <TouchableOpacity
-            >
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <View className='flex flex-row items-center justify-between mb-3 '>
+              <View className='flex flex-row gap-4'>
+                <MaterialIcons name="payment" size={24} color="#800000" />
+                <Text className='text-[14px] font-medium'>Payment Info</Text>
+              </View>
+
               <MaterialIcons name="navigate-next" size={28} color="black" />
-            </TouchableOpacity>
-          </View>
 
-          
-          <View className='flex flex-row items-center justify-between mb-2 '>
-        <View className='flex flex-row gap-4'>
-        <Feather name="help-circle" size={24} color="#800000" />
-        <Text className='text-[14px] font-medium'>Help Center</Text>
-        </View>
-            <TouchableOpacity
-            onPress={()=> router.push('../profile/helpCenter')}>
+            </View>
+          </TouchableOpacity>
+
+
+          <TouchableOpacity
+            onPress={() => router.push('../profile/helpCenter')}>
+            <View className='flex flex-row items-center justify-between mb-3 '>
+              <View className='flex flex-row gap-4'>
+                <Feather name="help-circle" size={24} color="#800000" />
+                <Text className='text-[14px] font-medium'>Help Center</Text>
+              </View>
+
               <MaterialIcons name="navigate-next" size={28} color="black" />
-            </TouchableOpacity>
-          </View>
+
+            </View>
+          </TouchableOpacity>
 
 
-          <View className='flex flex-row items-center gap-3 mt-10'>
+          <View className='flex flex-row items-center gap-3 mt-3'>
             <MaterialIcons name="logout" size={24} color="#FA2E31" />
             <TouchableOpacity>
               <Text className='text-[#FA2E31] font-semibold'>Logout</Text>
