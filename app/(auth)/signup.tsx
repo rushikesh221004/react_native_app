@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView, ScrollView, TextInput, TouchableOpacity, Image, Button } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, TextInput, TouchableOpacity, Image, Button, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import Svg, { Path } from 'react-native-svg';
 import { useFonts } from 'expo-font';
@@ -20,6 +20,37 @@ const SignUp = () => {
     }
   };
 
+  const [profileImage, setProfileImage] = useState('')
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [mobileNo, setMobileNo] = useState('')
+  const [location, setLocation] = useState('')
+  const [bloodGroup, setBloodGroup] = useState('')
+  const [gender, setGender] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+
+  const handleSubmit = () => {
+    setFullName(fullName)
+    setEmail(email)
+    setMobileNo(mobileNo)
+    setLocation(location)
+    setBloodGroup(bloodGroup)
+    setGender(gender)
+    setPassword(password)
+    setConfirmPassword(confirmPassword)
+    if ([fullName, email, mobileNo, location, bloodGroup, gender, password, confirmPassword].some(field => field === "")) {
+      Alert.alert("All fields are required.")
+    }
+
+    if(password !== confirmPassword) {
+      Alert.alert("Password and confirm password must be the same.")
+    }
+
+    if (fullName !== "" && email !== "" && mobileNo !== "" && location !== "" && bloodGroup !== "" && gender !== "" && password !== "" && confirmPassword !== "" && password === confirmPassword) {
+      router.push('/(auth)')
+    }
+  }
 
 
   const router = useRouter();
@@ -79,6 +110,8 @@ const SignUp = () => {
             <Text className="font-semibold text-lg ">Name</Text>
             <TextInput
               placeholder="ex: Vijay Hiwale"
+              value={fullName}
+              onChangeText={text => setFullName(text)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
@@ -87,6 +120,8 @@ const SignUp = () => {
             <TextInput
               placeholder="example@gmail.com"
               keyboardType="email-address"
+              value={email}
+              onChangeText={text => setEmail(text)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
@@ -95,6 +130,8 @@ const SignUp = () => {
             <TextInput
               placeholder="Enter Mobile No."
               keyboardType="numeric"
+              value={mobileNo}
+              onChangeText={text => setMobileNo(text)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
@@ -103,6 +140,8 @@ const SignUp = () => {
             <TextInput
               placeholder="Enter Your Location"
               keyboardType="default"
+              value={location}
+              onChangeText={text => setLocation(text)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
@@ -110,6 +149,8 @@ const SignUp = () => {
             <Text className="font-semibold text-lg mt-5">Blood Group</Text>
             <TextInput
               placeholder="Enter Blood Group ex: A+ B O+"
+              value={bloodGroup}
+              onChangeText={text => setBloodGroup(text)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
@@ -117,6 +158,8 @@ const SignUp = () => {
             <Text className="font-semibold text-lg mt-5">Enter Gender</Text>
             <TextInput
               placeholder="Male or Female"
+              value={gender}
+              onChangeText={text => setGender(text)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
             />
 
@@ -125,6 +168,8 @@ const SignUp = () => {
             <View className="flex flex-row justify-end items-center relative">
               <TextInput
                 placeholder="**************"
+                value={password}
+                onChangeText={text => setPassword(text)}
                 className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
                 secureTextEntry={!passwordVisible}
               />
@@ -141,6 +186,8 @@ const SignUp = () => {
             <View className="flex flex-row justify-end items-center relative">
               <TextInput
                 placeholder="**************"
+                value={confirmPassword}
+                onChangeText={text => setConfirmPassword(text)}
                 secureTextEntry={!confirmPasswordVisible}
                 className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
               />
@@ -155,7 +202,7 @@ const SignUp = () => {
             {/* Sign Up Button */}
             <TouchableOpacity
               className="bg-[#800000] w-full py-3 rounded-lg mt-10"
-              onPress={() => router.push('/(auth)')}
+              onPress={handleSubmit}
             >
               <Text className="text-white text-center font-medium text-[15px]">Sign Up</Text>
             </TouchableOpacity>
@@ -179,7 +226,7 @@ const SignUp = () => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 };
 
