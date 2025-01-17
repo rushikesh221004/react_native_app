@@ -5,6 +5,7 @@ import Svg, { Path } from 'react-native-svg';
 import { useFonts } from 'expo-font';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
+import { Picker } from '@react-native-picker/picker';
 
 const SignUp = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -19,6 +20,8 @@ const SignUp = () => {
       setImage(result.assets[0].uri); // Save the picked image's URI
     }
   };
+
+  const [selectedGender, setSelectedGender] = useState('');
 
   const [profileImage, setProfileImage] = useState('')
   const [fullName, setFullName] = useState('')
@@ -146,22 +149,39 @@ const SignUp = () => {
             />
 
             {/* Blood Group */}
-            <Text className="font-semibold text-lg mt-5">Blood Group</Text>
-            <TextInput
-              placeholder="Enter Blood Group ex: A+ B O+"
-              value={bloodGroup}
-              onChangeText={text => setBloodGroup(text)}
+            <Text className="font-semibold text-lg mt-5">Select Blood Group</Text>
+            <Picker
+              selectedValue={bloodGroup}
+              onValueChange={(itemValue) => setBloodGroup(itemValue)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
-            />
+            >
+              <Picker.Item label="Blood Group"/>
+              <Picker.Item label="A" value="A" />
+              <Picker.Item label="B" value="B" />
+              <Picker.Item label="AB" value="AB" />
+              <Picker.Item label="O" value="O" />
+              <Picker.Item label="A+" value="A+" />
+              <Picker.Item label="A-" value="A-" />
+              <Picker.Item label="B+" value="B+" />
+              <Picker.Item label="B-" value="B-" />
+              <Picker.Item label="AB+" value="AB+" />
+              <Picker.Item label="AB-" value="AB-" />
+              <Picker.Item label="O+" value="O+" />
+              <Picker.Item label="O-" value="O-" />
+            </Picker>
 
             {/* Gender */}
-            <Text className="font-semibold text-lg mt-5">Enter Gender</Text>
-            <TextInput
-              placeholder="Male or Female"
-              value={gender}
-              onChangeText={text => setGender(text)}
+            <Text className="font-semibold text-lg mt-5">Select Gender</Text>
+            <Picker
+              selectedValue={gender}
+              onValueChange={(itemValue) => setGender(itemValue)}
               className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
-            />
+            >
+              <Picker.Item label="Gender"/>
+              <Picker.Item label="Male" value="male" />
+              <Picker.Item label="Female" value="female" />
+              <Picker.Item label="Other" value="other" />
+            </Picker>
 
             {/* Password */}
             <Text className="font-semibold text-lg mt-5">Password</Text>
@@ -229,5 +249,6 @@ const SignUp = () => {
     </SafeAreaView >
   );
 };
+
 
 export default SignUp;
