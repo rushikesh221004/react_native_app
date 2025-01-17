@@ -21,8 +21,6 @@ const SignUp = () => {
     }
   };
 
-  const [selectedGender, setSelectedGender] = useState('');
-
   const [profileImage, setProfileImage] = useState('')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
