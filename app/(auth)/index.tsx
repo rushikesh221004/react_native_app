@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, TextInput, View, TouchableOpacity, } from "react-native";
+import { Text, TextInput, View, TouchableOpacity, Alert, } from "react-native";
 import { useFonts } from 'expo-font';
 import Svg, { Path } from 'react-native-svg';
 import { useRouter } from 'expo-router';
@@ -16,6 +16,31 @@ const Login = () => {
 
   const [showIcon, setShowIcon] = useState(false);
 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleSubmit = () => {
+    if (!email && !password) {
+      Alert.alert("email and password field are required")
+    }
+
+    if (email.length > 0 && !password) {
+      Alert.alert("password field are required")
+    }
+
+    if (password.length > 0 && !email) {
+      Alert.alert("email field are required")
+    }
+
+    if(password.length > 0 && email.length > 0 && !email.includes('@')) {
+      Alert.alert("please enter valid email address")
+    }
+
+    if (password.length > 0 && email.length > 0 && email.includes('@')) {
+      router.push('./choose-preference')
+    }
+
+  }
   const handlePress = () => {
     setShowIcon((prevState) => !prevState);
   };
@@ -36,7 +61,7 @@ const Login = () => {
         </Svg>
         <TouchableOpacity className=' absolute left-4 top-12 w-[30px] h-[30px]'
           onPress={() => router.replace('/(auth)/signup')}>
-    
+
           <Ionicons name="chevron-back-outline" size={25} color="white" />
         </TouchableOpacity>
         <Text className='text-5xl   text-white absolute'
@@ -55,10 +80,12 @@ const Login = () => {
         <View>
           <Text className=" mt-6 font-semibold text-lg">Email</Text>
           <TextInput
-              placeholder="example@gmail.com"
-              keyboardType="email-address"
-              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
-            />
+            placeholder="example@gmail.com"
+            keyboardType="email-address"
+            value={email}
+            onChangeText={text => setEmail(text)}
+            className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
+          />
 
           <Text className=" mt-5 font-semibold text-lg">Password</Text>
 
@@ -66,7 +93,8 @@ const Login = () => {
 
             <TextInput
               placeholder="**************"
-
+              value={password}
+              onChangeText={text => setPassword(text)}
               className="w-full px-2   h-[40px] mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
               secureTextEntry={!passwordVisible}
             />
@@ -77,17 +105,17 @@ const Login = () => {
           </View>
 
           <View className="flex flex-row justify-end mt-2">
-          
+
             <TouchableOpacity onPress={() => router.push('/(auth)/forget-password')}>
               <Text className="underline  font-medium">
                 Forget password?
               </Text>
             </TouchableOpacity>
           </View>
-         
+
           <TouchableOpacity
             className="bg-[#800000] w-full text-center py-3 rounded-lg mt-10"
-            onPress={() => router.push('./choose-preference')}
+            onPress={handleSubmit}
           >
             <Text className="text-white text-center font-medium text-[15px]">Login</Text>
           </TouchableOpacity>
@@ -100,36 +128,36 @@ const Login = () => {
 
         <View className="w-[200px] mx-auto mt-5  flex flex-row gap-10">
           <View className="flex items-center justify-center">
-          <AntDesign
-            name="google"
-            size={35}
-            color="#0284c7"
-            className="p-1 text-6x rounded-full flex justify-center items-center"
-          />
+            <AntDesign
+              name="google"
+              size={35}
+              color="#0284c7"
+              className="p-1 text-6x rounded-full flex justify-center items-center"
+            />
           </View>
-         <View className="w-[40px] h-[40px]  flex items-center justify-center bg-sky-600 rounded-full ">
-         <FontAwesome
-            name="facebook-f"
-            size={30}
-            color="#fff"
-        
-          />
-         </View>
-         <View className="flex items-center justify-center">
-         <AntDesign
-            name="apple1"
-            size={35}
-            color="black"
-            className=" rounded-full flex justify-center items-center"
-          />
-         </View>
+          <View className="w-[40px] h-[40px]  flex items-center justify-center bg-[#1877F2] rounded-full ">
+            <FontAwesome
+              name="facebook-f"
+              size={30}
+              color="#fff"
+
+            />
+          </View>
+          <View className="flex items-center justify-center">
+            <AntDesign
+              name="apple1"
+              size={35}
+              color="black"
+              className=" rounded-full flex justify-center items-center"
+            />
+          </View>
         </View>
         <View className="flex-row justify-center my-4  ">
-            <Text className="font-semibold text-[14px]">Don't have an account?</Text>
-            <TouchableOpacity onPress={() => router.push('/(auth)/signup')}>
-              <Text className="text-[#800000] font-semibold text-[14px]"> Sign up</Text>
-            </TouchableOpacity>
-          </View>
+          <Text className="font-semibold text-[14px]">Don't have an account?</Text>
+          <TouchableOpacity onPress={() => router.push('/(auth)/signup')}>
+            <Text className="text-[#800000] font-semibold text-[14px]"> Sign up</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
