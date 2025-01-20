@@ -26,8 +26,8 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [mobileNo, setMobileNo] = useState('')
   const [location, setLocation] = useState('')
-  const [bloodGroup, setBloodGroup] = useState('')
-  const [gender, setGender] = useState('')
+  const [bloodGroup, setBloodGroup] = useState('A')
+  const [gender, setGender] = useState('male')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 
@@ -40,15 +40,20 @@ const SignUp = () => {
     setGender(gender)
     setPassword(password)
     setConfirmPassword(confirmPassword)
-    if ([fullName, email, mobileNo, location, bloodGroup, gender, password, confirmPassword].some(field => field === "")) {
+    if ([fullName, email, mobileNo, location, bloodGroup, gender, password, confirmPassword].some(field => field.length <= 0)) {
       Alert.alert("All fields are required.")
     }
 
-    if(password !== confirmPassword) {
+    if (password !== confirmPassword) {
       Alert.alert("Password and confirm password must be the same.")
     }
 
-    if (fullName !== "" && email !== "" && mobileNo !== "" && location !== "" && bloodGroup !== "" && gender !== "" && password !== "" && confirmPassword !== "" && password === confirmPassword) {
+    if (fullName.length > 0 && mobileNo.length > 0 && location.length > 0 && password.length > 0 && confirmPassword.length > 0 && !email.includes('@')) {
+      Alert.alert("please enter valid email address")
+    }
+
+
+    if (fullName !== "" && email !== "" && mobileNo !== "" && location !== "" && bloodGroup !== "" && gender !== "" && password !== "" && confirmPassword !== "" && password === confirmPassword && email.includes('@')) {
       router.push('/(auth)')
     }
   }
@@ -148,38 +153,39 @@ const SignUp = () => {
 
             {/* Blood Group */}
             <Text className="font-semibold text-lg mt-5">Select Blood Group</Text>
-            <Picker
-              selectedValue={bloodGroup}
-              onValueChange={(itemValue) => setBloodGroup(itemValue)}
-              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
-            >
-              <Picker.Item label="Blood Group"/>
-              <Picker.Item label="A" value="A" />
-              <Picker.Item label="B" value="B" />
-              <Picker.Item label="AB" value="AB" />
-              <Picker.Item label="O" value="O" />
-              <Picker.Item label="A+" value="A+" />
-              <Picker.Item label="A-" value="A-" />
-              <Picker.Item label="B+" value="B+" />
-              <Picker.Item label="B-" value="B-" />
-              <Picker.Item label="AB+" value="AB+" />
-              <Picker.Item label="AB-" value="AB-" />
-              <Picker.Item label="O+" value="O+" />
-              <Picker.Item label="O-" value="O-" />
-            </Picker>
+            <View className="w-full h-[40px] flex justify-center px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]">
+              <Picker
+                selectedValue={bloodGroup}
+                onValueChange={(itemValue) => setBloodGroup(itemValue)}
+              >
+                <Picker.Item label="A" value="A" />
+                <Picker.Item label="B" value="B" />
+                <Picker.Item label="AB" value="AB" />
+                <Picker.Item label="O" value="O" />
+                <Picker.Item label="A+" value="A+" />
+                <Picker.Item label="A-" value="A-" />
+                <Picker.Item label="B+" value="B+" />
+                <Picker.Item label="B-" value="B-" />
+                <Picker.Item label="AB+" value="AB+" />
+                <Picker.Item label="AB-" value="AB-" />
+                <Picker.Item label="O+" value="O+" />
+                <Picker.Item label="O-" value="O-" />
+              </Picker>
+            </View>
 
             {/* Gender */}
             <Text className="font-semibold text-lg mt-5">Select Gender</Text>
-            <Picker
-              selectedValue={gender}
-              onValueChange={(itemValue) => setGender(itemValue)}
-              className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
-            >
-              <Picker.Item label="Gender"/>
-              <Picker.Item label="Male" value="male" />
-              <Picker.Item label="Female" value="female" />
-              <Picker.Item label="Other" value="other" />
-            </Picker>
+            <View className="w-full h-[40px] flex justify-center px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]">
+              <Picker
+                selectedValue={gender}
+                onValueChange={(itemValue) => setGender(itemValue)}
+                className="w-full h-[40px] px-2 mt-2 border-2 border-[#800000] rounded-lg font-semibold text-gray-800 text-[14px]"
+              >
+                <Picker.Item label="Male" value="male" />
+                <Picker.Item label="Female" value="female" />
+                <Picker.Item label="Other" value="other" />
+              </Picker>
+            </View>
 
             {/* Password */}
             <Text className="font-semibold text-lg mt-5">Password</Text>
