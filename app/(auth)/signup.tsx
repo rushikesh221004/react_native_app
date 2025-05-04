@@ -188,10 +188,6 @@ const SignUp = () => {
                 onValueChange={(value) => handleChange("bloodGroup", value)}
               >
                 <Picker.Item label="Select Blood Group" value="" />
-                <Picker.Item label="A" value="A" />
-                <Picker.Item label="B" value="B" />
-                <Picker.Item label="AB" value="AB" />
-                <Picker.Item label="O" value="O" />
                 <Picker.Item label="A+" value="A+" />
                 <Picker.Item label="A-" value="A-" />
                 <Picker.Item label="B+" value="B+" />

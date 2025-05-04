@@ -39,6 +39,8 @@ interface Event {
 
 export default function HomeScreen() {
   const [events, setEvents] = useState<Event[]>([]);
+  const [userProfileName, setUserProfileName] = useState("");
+  const [userProfileId, setUserProfileId] = useState("");
 
   useEffect(() => {
     fetchEvents();
@@ -49,9 +51,12 @@ export default function HomeScreen() {
       const response = await axios.get(
         "https://find-donor-backend.onrender.com/api/v1/auth/profile"
       );
-      console.log("Response Data = ", response.data);
 
-      response.data.data.forEach((item: any) => {
+      setUserProfileName(await response.data.data.profileName);
+      setUserProfileId(await response.data.data.userId);
+      // console.log("Response Data = ", response.data.profileName);
+
+      response.data.data["donations"].forEach((item: any) => {
         setEvents((prevEvents) => [...prevEvents, item]);
       });
     } catch (error) {
@@ -131,10 +136,10 @@ export default function HomeScreen() {
                   <View className="h-14 w-14 bg-white rounded-full"></View>
                   <View className="pl-2">
                     <Text className="text-white text-lg font-normal">
-                      Hello Selena!
+                      {userProfileName}
                     </Text>
                     <Text className="text-white text-[10px] mt-1">
-                      User ID: 915770
+                      User ID: {userProfileId}
                     </Text>
                   </View>
                 </View>
