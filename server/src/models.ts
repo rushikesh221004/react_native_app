@@ -1,3 +1,6 @@
+import mongoose, { Document } from 'mongoose';
+const Schema = mongoose.Schema;
+const model = mongoose.model;
 export type Gender = 'male' | 'female' | 'other';
 
 export interface User {
@@ -71,13 +74,15 @@ interface DonorDoc extends Document {
   location: string;
   bloodGroup: string;
   rating: number;
+  userId?: string;
 }
 
 const DonorSchema = new Schema<DonorDoc>({
-  name: String,
-  location: String,
-  bloodGroup: String,
-  rating: Number,
+  name: { type: String, required: true },
+  location: { type: String, required: true },
+  bloodGroup: { type: String, required: true, index: true },
+  rating: { type: Number, default: 0 },
+  userId: { type: String, index: true, unique: true, sparse: true },
 }, { timestamps: true });
 
 interface BloodRequestDoc extends Document {
@@ -91,12 +96,12 @@ interface BloodRequestDoc extends Document {
 }
 
 const BloodRequestSchema = new Schema<BloodRequestDoc>({
-  patientName: String,
-  bloodType: String,
-  age: Number,
-  diseaseName: String,
-  location: String,
-  contactNumber: String,
+  patientName: { type: String, required: true },
+  bloodType: { type: String, required: true, index: true },
+  age: { type: Number, required: true },
+  diseaseName: { type: String, required: true },
+  location: { type: String, required: true },
+  contactNumber: { type: String, required: true },
 }, { timestamps: { createdAt: true, updatedAt: true } });
 
 interface DonationDoc extends Document {
@@ -110,22 +115,21 @@ interface DonationDoc extends Document {
 }
 
 const DonationSchema = new Schema<DonationDoc>({
-  name: String,
-  bloodGroup: String,
-  donationDate: Date,
+  name: { type: String, required: true },
+  bloodGroup: { type: String, required: true },
+  donationDate: { type: Date, required: true },
   donor: {
-    _id: String,
-    name: String,
-    bloodGroup: String,
-    email: String,
+    _id: { type: String, required: true },
+    name: { type: String, required: true },
+    bloodGroup: { type: String, required: true },
+    email: { type: String, required: true },
   },
-  location: String,
-  unitsDonated: Number,
-  userId: String,
+  location: { type: String, required: true },
+  unitsDonated: { type: Number, required: true },
+  userId: { type: String, required: true, index: true },
 }, { timestamps: true });
 
 export const UserModel = mongoose.models.User || model<UserDoc>('User', UserSchema);
 export const DonorModel = mongoose.models.Donor || model<DonorDoc>('Donor', DonorSchema);
 export const BloodRequestModel = mongoose.models.BloodRequest || model<BloodRequestDoc>('BloodRequest', BloodRequestSchema);
 export const DonationModel = mongoose.models.Donation || model<DonationDoc>('Donation', DonationSchema);
-import mongoose, { Schema, model, Document } from 'mongoose';

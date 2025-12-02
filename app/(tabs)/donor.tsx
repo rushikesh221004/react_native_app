@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { Feather, FontAwesome6, Ionicons } from '@expo/vector-icons'
 import { router, useRouter } from 'expo-router'
 import axios from 'axios'
-const API_BASE = 'http://localhost:4000/api/v1'
+const API_BASE = 'http://localhost:5000/api/v1'
 
 
 

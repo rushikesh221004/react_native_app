@@ -20,7 +20,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { LinearGradient } from "expo-linear-gradient";
 import axios from "axios";
-const API_BASE = "http://localhost:4000/api/v1";
+const API_BASE = "http://localhost:5000/api/v1";
 import { useEffect, useState } from "react";
 
 interface Event {
