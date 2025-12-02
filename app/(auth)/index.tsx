@@ -17,6 +17,7 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import axios from "axios";
+const API_BASE = "http://localhost:4000/api/v1";
 
 interface LoginFormData {
   email: string;
@@ -46,19 +47,19 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post(
-        "https://find-donor-backend.onrender.com/api/v1/auth/login",
-        formData
-      );
-      console.log("Login Success:", response.data);
-      Alert.alert("Success", "User login successfully!");
-      router.replace("/(tabs)");
+      const response = await axios.post(`${API_BASE}/auth/login`, formData, {
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (response?.data) {
+        Alert.alert("Success", "User login successfully!");
+        router.replace("/(tabs)");
+      } else {
+        Alert.alert("Error", "Invalid response");
+      }
     } catch (error: any) {
-      console.log("Login Error:", error.response?.data || error.message);
-      Alert.alert(
-        "Error",
-        error.response?.data?.message || "Something went wrong"
-      );
+      const isNetworkError = !!error?.request && !error?.response;
+      const message = isNetworkError ? 'Network error (CORS or connection)' : (error?.response?.data?.message || error?.message || 'Something went wrong');
+      Alert.alert("Error", message);
     }
   };
 

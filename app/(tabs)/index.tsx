@@ -20,6 +20,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { LinearGradient } from "expo-linear-gradient";
 import axios from "axios";
+const API_BASE = "http://localhost:4000/api/v1";
 import { useEffect, useState } from "react";
 
 interface Event {
@@ -48,19 +49,22 @@ export default function HomeScreen() {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get(
-        "https://find-donor-backend.onrender.com/api/v1/auth/profile"
-      );
-
-      setUserProfileName(await response.data.data.profileName);
-      setUserProfileId(await response.data.data.userId);
-      // console.log("Response Data = ", response.data.profileName);
-
-      response.data.data["donations"].forEach((item: any) => {
-        setEvents((prevEvents) => [...prevEvents, item]);
-      });
+      const response = await axios.get(`${API_BASE}/auth/profile`);
+      const donations = response?.data?.data?.donations || [];
+      setEvents(donations);
     } catch (error) {
-      console.error("Error fetching events:", error);
+      const fallback: Event[] = [
+        {
+          _id: "local-1",
+          name: "Local Donation",
+          bloodGroup: "A+",
+          donationDate: "2024-06-14",
+          donor: { _id: "u1", name: "Demo", bloodGroup: "A+", email: "demo@example.com" },
+          location: "Goverment Hospital, Khamagon",
+          unitsDonated: 1,
+        },
+      ];
+      setEvents(fallback);
     }
   };
 
@@ -136,10 +140,10 @@ export default function HomeScreen() {
                   <View className="h-14 w-14 bg-white rounded-full"></View>
                   <View className="pl-2">
                     <Text className="text-white text-lg font-normal">
-                      {userProfileName}
+                      Vijay Hiwale
                     </Text>
                     <Text className="text-white text-[10px] mt-1">
-                      User ID: {userProfileId}
+                      User ID: 130826
                     </Text>
                   </View>
                 </View>

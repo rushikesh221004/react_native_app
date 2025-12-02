@@ -42,8 +42,8 @@ const Profile = () => {
           </TouchableOpacity>
           <View className='mr-2'>
             <Text className=' text-[24px] text-white '
-              style={{ fontFamily: 'SpecialElite' }}>Selena Ahmed</Text>
-            <Text className='text-white text-center text-[11px] font-medium'>User ID: 542684</Text>
+              style={{ fontFamily: 'SpecialElite' }}>Vijay Hiwale</Text>
+            <Text className='text-white text-center text-[11px] font-medium'>User ID: 130826</Text>
           </View>
           <TouchableOpacity
           // onPress={() => router.push('../(nonTabs)/notification')}
@@ -161,7 +161,7 @@ const Profile = () => {
 
           <View className='flex flex-row items-center gap-3 mt-3'>
             <MaterialIcons name="logout" size={24} color="#FA2E31" />
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => router.replace('/(auth)')}>
               <Text className='text-[#FA2E31] font-semibold'>Logout</Text>
             </TouchableOpacity>
           </View>

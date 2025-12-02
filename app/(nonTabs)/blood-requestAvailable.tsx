@@ -1,18 +1,29 @@
 import { View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import axios from 'axios';
+const API_BASE = 'http://localhost:4000/api/v1';
 
 const BloodRequestAvailable = () => {
-    const bloodReqestData = [
-        { bloodType: "A", location: "City Hospital", time: "12 Sep 2024" },
-        { bloodType: "A+", location: "Life Hospital", time: "15 Mar 2024" },
-        { bloodType: "B+", location: "Renabo Hospital", time: "25 Jan 2024" },
-        { bloodType: "O+", location: "Marco Hospital", time: "30 Feb 2024" },
-        { bloodType: "A+", location: "Life Hospital", time: "15 Mar 2024" },
-    ];
-
+    const [requests, setRequests] = useState<Array<{ bloodType: string; location: string; time: string }>>([]);
     const router = useRouter();
+
+    useEffect(() => {
+        const fetchRequests = async () => {
+            try {
+                const res = await axios.get(`${API_BASE}/requests`);
+                const data = res?.data?.data || [];
+                setRequests(data);
+            } catch (e) {
+                setRequests([
+                    { bloodType: 'A', location: 'City Hospital', time: '12 Sep 2024' },
+                    { bloodType: 'A+', location: 'Life Hospital', time: '15 Mar 2024' },
+                ]);
+            }
+        };
+        fetchRequests();
+    }, []);
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -30,7 +41,7 @@ const BloodRequestAvailable = () => {
 
                 {/* Main Form */}
                 <View className="px-5 mt-14">
-                    {bloodReqestData.map((data, index) => (
+                    {requests.map((data, index) => (
                         <View
                             key={index}
                             className="flex flex-col gap-4 border-2 border-gray-400 rounded-xl p-5 mb-6"

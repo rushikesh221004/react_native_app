@@ -16,6 +16,7 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import { Picker } from "@react-native-picker/picker";
 import axios from "axios";
+const API_BASE = "http://localhost:4000/api/v1";
 
 interface RegisterFormData {
   fullName: string;
@@ -60,21 +61,38 @@ const SignUp = () => {
   const router = useRouter();
 
   const handleRegister = async () => {
+    if (
+      !formData.fullName ||
+      !formData.email ||
+      !formData.mobileNo ||
+      !formData.location ||
+      !formData.bloodGroup ||
+      !formData.gender ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
+      Alert.alert("Error", "Please fill all fields");
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      Alert.alert("Error", "Passwords do not match");
+      return;
+    }
+
     try {
-      const response = await axios.post(
-        "https://find-donor-backend.onrender.com/api/v1/auth/register",
-        formData
-      );
-      console.log("Register Success:", response.data);
-      Alert.alert("Success", "User registered successfully!");
-      router.replace("/");
+      const response = await axios.post(`${API_BASE}/auth/register`, formData, {
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (response?.data) {
+        Alert.alert("Success", "User registered successfully!");
+        router.replace("/(auth)");
+      } else {
+        Alert.alert("Error", "Invalid response");
+      }
     } catch (error: any) {
-      console.log("Register Error:", error.response?.data || error.message);
-      Alert.alert(
-        "Error",
-        error.response?.data?.message || "Something went wrong"
-      );
-      // console.log("This is my Errors = ", error.response.data.errors[0].message)
+      const isNetworkError = !!error?.request && !error?.response;
+      const message = isNetworkError ? 'Network error (CORS or connection)' : (error?.response?.data?.message || error?.message || 'Something went wrong');
+      Alert.alert("Error", message);
     }
   };
 
@@ -259,12 +277,12 @@ const SignUp = () => {
 
             {/* Sign Up Button */}
             <TouchableOpacity
-              onPress={handleRegister}
-              className="bg-[#800000] w-full py-3 rounded-lg mt-10"
+                onPress={handleRegister}
+                className="bg-[#800000] w-full py-3 rounded-lg mt-10"
             >
-              <Text className="text-white text-center font-medium text-[15px]">
-                Sign Up
-              </Text>
+                <Text className="text-white text-center font-medium text-[15px]">
+                    Sign Up
+                </Text>
             </TouchableOpacity>
           </View>
         </View>

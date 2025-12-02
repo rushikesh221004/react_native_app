@@ -1,8 +1,10 @@
 import { View, Text, TouchableOpacity, ScrollView, SafeAreaView, TextInput } from 'react-native'
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import { Feather, FontAwesome6, Ionicons } from '@expo/vector-icons'
 import { router, useRouter } from 'expo-router'
+import axios from 'axios'
+const API_BASE = 'http://localhost:4000/api/v1'
 
 
 
@@ -25,57 +27,34 @@ const renderRatingStars = (rating: number) => {
 
 const Find_Donor = () => {
   const router = useRouter();
+  const [donors, setDonors] = useState<Array<{ id: string | number; name: string; location: string; bloodGroup: string; rating: number }>>([])
+  const [search, setSearch] = useState('')
+  const [group, setGroup] = useState('')
 
-  const donors = [
-    {
-      id: 1,
-      name: "Shashwata Chowdhury",
-      location: "Labaid Hospital",
+  useEffect(() => {
+    const fetchDonors = async () => {
+      try {
+        const res = await axios.get(`${API_BASE}/donors`)
+        const data = res?.data?.data || []
+        setDonors(data)
+      } catch (e) {
+        setDonors([
+          { id: 1, name: 'Shashwata Chowdhury', location: 'Labaid Hospital', bloodGroup: 'B+', rating: 5 },
+          { id: 2, name: 'Fhamida Nupur', location: 'Dhaka Medical College', bloodGroup: 'A+', rating: 4 },
+          { id: 3, name: 'Sadman Hossain', location: 'Labaid Hospital', bloodGroup: 'B+', rating: 5 },
+          { id: 4, name: 'Sabrina Binte', location: 'Square Hospital', bloodGroup: 'O+', rating: 4 },
+        ])
+      }
+    }
+    fetchDonors()
+  }, [])
 
-      rating: 5,
-      bloodGroup: "B+",
-    },
-    {
-      id: 2,
-      name: "Fhamida Nupur",
-      location: "Dhaka Medical College",
-
-      rating: 4,
-      bloodGroup: "A+",
-    },
-    {
-      id: 3,
-      name: "Sadman Hossain",
-      location: "Labaid Hospital",
-
-      rating: 5,
-      bloodGroup: "B+",
-    },
-    {
-      id: 4,
-      name: "Sabrina Binte",
-      location: "Square Hospital",
-
-      rating: 4,
-      bloodGroup: "O+",
-    },
-    {
-      id: 5,
-      name: "Zahid Khan",
-      location: "Ibne Sina Hospital",
-
-      rating: 5,
-      bloodGroup: "B+",
-    },
-    {
-      id: 6,
-      name: "Zahid Khan",
-      location: "Ibne Sina Hospital",
-
-      rating: 5,
-      bloodGroup: "B+",
-    },
-  ];
+  const filtered = useMemo(() => {
+    return donors.filter(d =>
+      (group ? d.bloodGroup === group : true) &&
+      (search ? d.name.toLowerCase().includes(search.toLowerCase()) : true)
+    )
+  }, [donors, search, group])
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -102,40 +81,40 @@ const Find_Donor = () => {
             </Text>
             <View className='flex flex-col items-center justify-between my-6 flex-wrap '>
               <View className=' w-full flex flex-row items-center justify-between'>
-                <View className='relative   flex items-center justify-center'>
+                <TouchableOpacity onPress={() => setGroup('O')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>O</Text>
-                </View>
-                <View className='relative   flex items-center justify-center'>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setGroup('A+')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>A+</Text>
-                </View>
-                <View className='relative   flex items-center justify-center'>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setGroup('B+')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>B+</Text>
-                </View>
-                <View className='relative   flex items-center justify-center'>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setGroup('AB')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>AB</Text>
-                </View>
+                </TouchableOpacity>
               </View>
               <View className=' w-full flex flex-row items-center justify-between mt-6 mb-4 flex-wrap'>
-                <View className='relative   flex items-center justify-center'>
+                <TouchableOpacity onPress={() => setGroup('O-')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>O-</Text>
-                </View>
-                <View className='relative   flex items-center justify-center'>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setGroup('B-')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>B-</Text>
-                </View>
-                <View className='relative   flex items-center justify-center'>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setGroup('A-')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>A-</Text>
-                </View>
-                <View className='relative   flex items-center justify-center'>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setGroup('A')} className='relative   flex items-center justify-center'>
                   <Ionicons name="water" size={50} color="#800000" />
                   <Text className=' absolute text-center  text-white text-[13px] font-medium'>A</Text>
-                </View>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -158,17 +137,19 @@ const Find_Donor = () => {
               <TextInput
                 className='text-gray-700 px-10 border-2 border-gray-400 rounded-2xl w-full py-[11px] text-[13px] mb-4 font-medium'
                 placeholder='Search donor name'
+                value={search}
+                onChangeText={setSearch}
               >
-
+ 
               </TextInput>
               <Feather className=' absolute  left-3 top-[13px]' name="search" size={20} color="#9ca3af" />
             </View>
 
             <View className="">
-              {donors.map((donor) => (
+              {filtered.map((donor) => (
                 <View
                   key={donor.id}
-                  className="flex flex-row items-center bg-white  rounded-xl px-4 py-3  mb-4 border-2 border-gray-200  "
+                  className="flex flex-row items-center bg-white rounded-xl px-4 py-3 mb-4 border-2 border-gray-200"
                 >
                   {/* Red Circle */}
                   <View className="w-[53px] h-[53px] bg-[#800000] rounded-full flex items-center justify-center">
@@ -191,7 +172,7 @@ const Find_Donor = () => {
                   </View>
                   <View className='relative   flex items-center justify-center  '>
                     <Ionicons name="water" size={50} color="#800000" />
-                    <Text className=' absolute    text-white text-[13px] font-medium '>{donor.bloodGroup}</Text>
+                    <Text className=' absolute text-white text-[13px] font-medium '>{donor.bloodGroup}</Text>
                   </View>
                 </View>
               ))}
